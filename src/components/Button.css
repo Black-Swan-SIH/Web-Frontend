@@ -1,0 +1,25 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --shadow:rgba(255, 255, 255, 0.1);
+}
+.bt {
+  padding: 0.6em 1.5em;
+  border-radius: 0.3em;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* .bt:hover {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 0px solid var(--text-color);
+  } */
