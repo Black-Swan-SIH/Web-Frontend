@@ -18,9 +18,24 @@ function NavBar() {
       <b>RAC, DRDO</b>
       <div className="nav">
         <b className="hindi">हिन्दी</b>
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {darkMode ? "Light Mode" : "Dark Mode"}
-        </button>
+      
+      <div className="sun">
+      <i class="fa-solid fa-sun"></i>
+      </div>
+      <div>
+      <label class="switch">
+  <input type="checkbox" checked={darkMode} onChange={toggleTheme}/>
+  <span class="slider round"></span>
+  
+</label>
+</div>
+<div className="moon">
+<i class="fa-solid fa-moon"></i>
+</div>
+
+
+        
+          
         <Button>Login</Button>
       </div>
     </header>
