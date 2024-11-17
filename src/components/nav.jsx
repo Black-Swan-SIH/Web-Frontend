@@ -17,7 +17,7 @@ function NavBar() {
     <header className="header">
       <b>RAC, DRDO</b>
       <div className="nav">
-        <b className="hindi">हिन्दी</b>
+        <Button bgcolor={darkMode?"#121212":"white"} color={darkMode?"white":"black"}>हिन्दी</Button>
         <div className="sun">
           <i class="fa-solid fa-sun"></i>
         </div>

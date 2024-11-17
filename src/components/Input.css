@@ -1,14 +1,13 @@
 .form-group input {
     width: 100%;
-    padding: 0.4rem;
-    margin: 0.4rem 0rem;
+    padding: 0.8rem;
     border-radius: 0.5rem;
-    border: 2px solid black;
+    border: 2px solid var(--text-color);
     outline: none;
-    font-size: 1rem;
-    color: #333;
+    font-size: 1.5rem;
+    color: var(--shadow);
     background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow);
     transition: all 0.3s ease;
   }
   

@@ -1,9 +1,9 @@
 import React from "react";
 import "./Button.css";
 
-const Button = ({children}) => {
+const Button = ({bgcolor,color,children}) => {
   return (
-    <button className="bt">
+    <button className="bt" style={{backgroundColor:bgcolor,color:color}}>
       {children}
     </button>
   );
