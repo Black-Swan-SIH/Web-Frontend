@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Heading = ({fontSize,children}) => {
+const Heading = ({ fontSize, children }) => {
   return (
     <div>
       <p style={{ fontSize: fontSize }}>{children}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Heading
+export default Heading;
