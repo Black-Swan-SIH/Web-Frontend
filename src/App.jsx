@@ -1,15 +1,22 @@
-import { React } from "react";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/nav";
 import Sign from "./components/SignIn";
+//import Profile from "./components/profile"; // Assuming you create this component
+import Profile from "./components/profile";
+import { green } from "@material-ui/core/colors";
 
 function App() {
   return (
-    <>
-      <NavBar/>
-      <Sign but="Register" a="Login" text="Already have an account? ">Sign Up</Sign>
-    </>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Sign but="Register" a="Login" text="Already have an account?">Sign Up</Sign>} />
+        <Route path="/profile" element={<Profile value={80} color="green"/>} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+

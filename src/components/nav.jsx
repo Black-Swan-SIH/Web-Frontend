@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./nav.css";
 import Button from "./Button";
 
+
 function NavBar() {
   const [darkMode, setDarkMode] = useState(false);
 
