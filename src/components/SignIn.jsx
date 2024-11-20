@@ -4,7 +4,7 @@ import Input from "./Input";
 import Button from "./Button";
 import Heading from "./Heading";
 
-export default function Sign({ children }) {
+export default function Sign({ but, a, text, children }) {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -41,14 +41,14 @@ export default function Sign({ children }) {
           >
             password
           </Input>
+          <p className="footer-text">
+            <Heading fontSize="15px" color="grey">{text} </Heading>
+            <a href="#">{a}</a>
+          </p>
           <div className="btn">
-            <Button>Register</Button>
+            <Button>{but}</Button>
           </div>
         </form>
-        <p className="footer-text">
-          <Heading fontSize="15px">Don't have an account? </Heading>
-          <a href="#">Login</a>
-        </p>
       </div>
     </div>
   );

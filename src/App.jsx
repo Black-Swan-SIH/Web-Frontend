@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar/>
-      <Sign>Sign Up</Sign>
+      <Sign but="Register" a="Login" text="Already have an account? ">Sign Up</Sign>
     </>
   );
 }

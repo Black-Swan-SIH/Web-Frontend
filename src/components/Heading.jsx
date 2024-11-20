@@ -1,10 +1,10 @@
 import React from "react";
 import "./Heading.css";
 
-const Heading = ({ fontSize, children }) => {
+const Heading = ({ fontSize,color, children }) => {
   return (
     <div>
-      <p style={{ fontSize: fontSize }}>{children}</p>
+      <p style={{ fontSize: fontSize ,color:color}}>{children}</p>
     </div>
   );
 };
