@@ -23,7 +23,7 @@ export default function Sign({ but, a, text, children }) {
   };
 
   return (
-    <div className="container">
+    <div className="w-[150%] h-full relative">
       <div className="circle1"></div>
       <div className="circle2"></div>
       <div className="glass-form">
@@ -45,7 +45,7 @@ export default function Sign({ but, a, text, children }) {
             <Heading fontSize="15px" color="grey">{text} </Heading>
             <a href="#">{a}</a>
           </p>
-          <div className="btn">
+          <div className="text-center relative">
             <Button>{but}</Button>
           </div>
         </form>

@@ -21,12 +21,6 @@ body {
     align-items: center;
   }
   
-  .container {
-    width: 150%;
-    height: 100%;
-    position: relative;
-  }
-  
   .glass-form {
     display: flex;
     flex-direction: column;
@@ -75,13 +69,6 @@ body {
   .footer-text a:hover {
     text-decoration: underline;
   }
-  
-  .btn{
-    text-align: center;
-    position: relative;
-    left: 9vw;
-  }
-
   .circle2 {
     position: absolute;
     top: 80%; /* Adjust as needed */
