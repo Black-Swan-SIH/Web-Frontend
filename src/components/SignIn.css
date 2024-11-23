@@ -21,6 +21,7 @@ body {
     align-items: center;
   }
   
+  
   .glass-form {
     display: flex;
     flex-direction: column;
@@ -29,7 +30,7 @@ body {
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(6px);
     border: 2px solid var(--shadow);
-    padding: 1.0rem;
+    padding: 1.8rem;
     width: 90%;
     color: var(--text-color);
     position: relative;

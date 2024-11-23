@@ -7,6 +7,13 @@
   font-family: "Poppins", sans-serif;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding-top: 10vh; 
+}
+
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
