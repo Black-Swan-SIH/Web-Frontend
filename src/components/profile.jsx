@@ -2,20 +2,19 @@ import React from "react";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "../App.css";
-import "react-circular-progressbar/dist/styles.css";
 import "./custom.css";
 import Details from "./Details";
 import Skills from "./Skills";
 import { RecoilRoot } from "recoil";
-function Profile({ value, color,userId }) {
+function Profile({ value, color, userId }) {
   return (
     <RecoilRoot>
-      <ProfilePage value={value} color={color} userId={userId}/>
+      <ProfilePage value={value} color={color} userId={userId} />
     </RecoilRoot>
   );
 }
 
-function ProfilePage({value,color,userId}) {
+function ProfilePage({ value, color, userId }) {
   return (
     <>
       <div className="container mt-5 pt-5 ml-5 mp-5">
@@ -47,7 +46,7 @@ function ProfilePage({value,color,userId}) {
                     }}
                   >
                     <img
-                      style={{ width: 250, marginTop: 105}}
+                      style={{ width: 250, marginTop: 105 }}
                       src="https://cdn-icons-png.flaticon.com/256/552/552721.png"
                       alt="doge"
                     />
