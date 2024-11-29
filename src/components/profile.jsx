@@ -40,7 +40,7 @@ function ProfilePage({ value, color, userId }) {
                       trail: {
                         stroke: `#d6d6d6`,
                         strokeWidth: 4,
-                        transform: "rotate(-135deg)", // Align the trail with the path
+                        transform: "rotate(-135deg)", 
                         transformOrigin: "center center",
                       },
                     }}
