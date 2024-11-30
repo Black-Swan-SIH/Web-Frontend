@@ -1,0 +1,47 @@
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 10vh;
+    padding: 20px;
+  }
+  
+  .search-box {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .scrollable-container {
+    max-height: 400px; /* Set desired height for the scrollable area */
+    overflow-y: auto; /* Add vertical scrolling */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .person-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three items per row */
+    gap: 20px; /* Add spacing between items */
+  }
+  
+  .person-list::-webkit-scrollbar {
+    width: 8px; /* Customize scrollbar width */
+  }
+  
+  .person-list::-webkit-scrollbar-thumb {
+    background: #ccc; /* Scrollbar thumb color */
+    border-radius: 5px;
+  }
+  
+  .person-list::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar track color */
+  }
+  
