@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 25vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(156, 175, 183, 1);
+  }
+  
+  .image-container {
+    height: 8vh;
+    width: 8vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    align-items: center;
+  }
+  
+  .image {
+    height: 100%;
+    width: 90%;
+  }
+  
+  .text {
+    flex: 1;
+    padding-left: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .suffix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+  }
+  .age{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    width: 50px;
+  }

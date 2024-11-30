@@ -23,7 +23,7 @@ export default function Sign({ but, a, text, children }) {
   };
 
   return (
-    <div className="w-[150%] h-full relative">
+    <div className="sign w-[150%] h-full relative">
       <div className="circle1"></div>
       <div className="circle2"></div>
       <div className="glass-form">
