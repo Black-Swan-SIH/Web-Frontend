@@ -1,5 +1,5 @@
 import React from 'react';
-import ExpandableDiv from '../components/keySkills';
+import ExpandableDiv from './keySkills';
 
 function Job() {
     const renderCircles = (count) => {

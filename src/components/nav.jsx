@@ -18,7 +18,7 @@ function NavBar() {
       <b>RAC, DRDO</b>
       <div className="nav">
         <Button bgcolor={darkMode?"#121212":"white"} color={darkMode?"white":"black"}>हिन्दी</Button>
-        <div className="sun">
+        <div className={`sun ${darkMode ? 'dark' : 'light'}`}>
           <i class="fa-solid fa-sun"></i>
         </div>
         <div>
@@ -27,7 +27,7 @@ function NavBar() {
             <span class="slider round"></span>
           </label>
         </div>
-        <div className="moon">
+        <div className={`moon ${darkMode ? 'dark' : 'light'}`}>
           <i class="fa-solid fa-moon"></i>
         </div>
         <Button>Login</Button>
