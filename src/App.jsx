@@ -19,7 +19,8 @@ function App() {
         <Route path="/profile" element={<Profile value={80} color="green" userId={1}/>} />
         <Route path="/experts" element={<Experts />} />
         <Route path="/job" element={<Job />} />
-        <Route path="/itemcount" element={<Itemcount head="Total Experts" value="11.26K"/>} />        {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
+        <Route path="/itemcount" element={<Itemcount head="Total Experts" value="11.26K"/>} />     
+        {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
       </Routes>
     </Router>
   );
