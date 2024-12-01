@@ -10,13 +10,13 @@ const Userlist = ({ imageSrc, name, age, work, value }) => {
         <img src={imageSrc} alt="Job Image" className="image" />
       </div>
       <div className="text">
-        <Heading fontSize="24px" fontWeight="600" className="name" color="rgba(32, 32, 32, 1)"        >
+        <Heading fontSize="20px" fontWeight="600" className="name" color="rgba(32, 32, 32, 1)"        >
           {name}
         </Heading>
         <div className="age">
-          <Heading fontSize="13px" fontWeight="500" color="rgba(90, 90, 90, 1)">Age:</Heading>
-          <Heading fontSize="13px" fontWeight="500">{age}</Heading>
-          <Heading fontSize="13px" fontWeight="500">Years</Heading>
+          <Heading fontSize="12px" fontWeight="500" color="rgba(90, 90, 90, 1)">Age:</Heading>
+          <Heading fontSize="12px" fontWeight="500">{age}</Heading>
+          <Heading fontSize="12px" fontWeight="500">Years</Heading>
         </div>
         <Heading fontSize="10px" fontWeight="500" className="role" color="rgba(61, 61, 61, 1)">
           {work}

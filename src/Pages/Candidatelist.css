@@ -5,7 +5,7 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  top: 15vh;
+  top: 12vh;
   padding: 20px;
 }
 
@@ -25,7 +25,7 @@
 .search-box {
   width: 80%;
   max-width: 700px;
-  padding: 10px;
+  padding: 5px 8px 5px 10px;
   margin: 20px 0;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -143,8 +143,15 @@
 
 .person-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three items per row */
-  gap: 10px; /* Add spacing between items */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.left-column {
+  justify-self: start;
+}
+
+.right-column {
+  justify-self: end;
 }
 
 .sorting {

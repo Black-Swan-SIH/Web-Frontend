@@ -15,8 +15,7 @@ const formatNumber = (num) => {
   }
   return num;
 };
-
-const Candidatelist = () => {
+const Candidatelist = ({head}) => {
   const currentYear = new Date().getFullYear();
   const [search, setSearch] = useState("");
   const [sortOption, setSortOption] = useState(""); // State to track selected sort option
@@ -67,38 +66,38 @@ const Candidatelist = () => {
         return age >= 31 && age <= 40;
       }
       return true;
-    })
-    const sortedData = filteredData.sort((a, b) => {
-      if (sortOption === "name") {
-        return `${a.first_name} ${a.last_name}`.localeCompare(
-          `${b.first_name} ${b.last_name}`
-        );
-      }
-      // if (sortOption === "age") {
-      //   return a.age - b.age;
-      // }
-      if (sortOption === "time-asc") {
-        const timeA = new Date(`1970-01-01T${a.time}Z`);
-        const timeB = new Date(`1970-01-01T${b.time}Z`);
-        return timeA - timeB;
-      }
-      if (sortOption === "time-desc") {
-        const timeA = new Date(`1970-01-01T${a.time}Z`);
-        const timeB = new Date(`1970-01-01T${b.time}Z`);
-        return timeB - timeA;
-      }
-      return 0;
     });
-    if (sortOption === "time-asc") {
-      sortedData.reverse();
-    } else if (sortOption === "time-desc") {
-      sortedData.reverse();
+  const sortedData = filteredData.sort((a, b) => {
+    if (sortOption === "name") {
+      return `${a.first_name} ${a.last_name}`.localeCompare(
+        `${b.first_name} ${b.last_name}`
+      );
     }
+    // if (sortOption === "age") {
+    //   return a.age - b.age;
+    // }
+    if (sortOption === "time-asc") {
+      const timeA = new Date(`1970-01-01T${a.time}Z`);
+      const timeB = new Date(`1970-01-01T${b.time}Z`);
+      return timeA - timeB;
+    }
+    if (sortOption === "time-desc") {
+      const timeA = new Date(`1970-01-01T${a.time}Z`);
+      const timeB = new Date(`1970-01-01T${b.time}Z`);
+      return timeB - timeA;
+    }
+    return 0;
+  });
+  if (sortOption === "time-asc") {
+    sortedData.reverse();
+  } else if (sortOption === "time-desc") {
+    sortedData.reverse();
+  }
   return (
     <div className="cont">
       <div className="head">
-        <Heading fontSize="48px" fontWeight="600">
-          Candidates
+        <Heading fontSize="45px" fontWeight="600">
+          {head}
         </Heading>
         <div className="items">
           <Itemcount head="Total Experts" value={formatNumber(total)} />
@@ -120,7 +119,11 @@ const Candidatelist = () => {
               onChange={(e) => setSearch(e.target.value)}
               onFocus={handleFocus}
             />
-            <Button bgcolor="rgba(190, 190, 190, 1)" color="black" padding="5px 12px">
+            <Button
+              bgcolor="rgba(190, 190, 190, 1)"
+              color="black"
+              padding="3px 12px"
+            >
               Ctrl+K
             </Button>
           </div>
@@ -147,10 +150,10 @@ const Candidatelist = () => {
           </select>
         </div>
       </div>
-      <div className="my-2 w-[70%] h-1 bg-gray-400 mx-auto"></div>
+      <div className="my-9 w-[60%] h-0.5 bg-gray-400 mx-auto"></div>
       <div className="scrollable-container">
         <div className="person-list">
-          {sortedData.map((person) => (
+          {sortedData.map((person, index) => (
             <Userlist
               key={person.id}
               imageSrc={node}
@@ -158,6 +161,9 @@ const Candidatelist = () => {
               age={currentYear - person.age}
               work={person.work}
               value={person.progress}
+              className={`userlist-item ${
+                Math.floor(index / 3) % 2 === 0 ? "left-column" : "right-column"
+              }`}
             />
           ))}
         </div>

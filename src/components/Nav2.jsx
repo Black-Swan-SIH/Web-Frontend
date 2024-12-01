@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./nav.css";
+import "./Nav2.css";
 import Button from "./Button";
 
-function NavBar() {
+function NavBar2() {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleTheme = () => {
@@ -15,7 +15,7 @@ function NavBar() {
 
   return (
     <header className="header">
-      <b>RAC, DRDO</b>
+      <b>RAC, DR</b>
       <div className="nav">
         <Button bgcolor={darkMode?"#121212":"white"} color={darkMode?"white":"black"} fontWeight="600">हिन्दी</Button>
         <div className={`sun ${darkMode ? 'dark' : 'light'}`}>
@@ -30,10 +30,9 @@ function NavBar() {
         <div className={`moon ${darkMode ? 'dark' : 'light'}`}>
           <i class="fa-solid fa-moon"></i>
         </div>
-        <Button>Login</Button>
       </div>
     </header>
   );
 }
 
-export default NavBar;
+export default NavBar2;
