@@ -1,10 +1,22 @@
 import React from "react";
 import "./Button.css";
 
-const Button = ({bgcolor,color,children,borderRadius,borderColor,padding,fontWeight}) => {
+const Button = ({ width, bgcolor, color, children, borderRadius, borderColor, padding, fontWeight, fontSize, icon, hoverBorder }) => {
   return (
-    <button className="bt" style={{backgroundColor:bgcolor,color:color,borderRadius:borderRadius,borderColor:borderColor,border: `1px solid ${borderColor}`,padding:padding,fontWeight:fontWeight}}>
+    <button
+      className={`bt ${hoverBorder ? 'hover-border' : ''}`}
+      style={{
+        backgroundColor: bgcolor,
+        color: color,
+        borderRadius: borderRadius,
+        borderColor: borderColor,
+        padding: padding,
+        fontWeight: fontWeight,
+        fontSize: fontSize,
+      }}
+    >
       {children}
+      {icon && <span className="icon">{icon}</span>}
     </button>
   );
 };

@@ -6,15 +6,8 @@ import Heading from "../components/Heading.jsx";
 import Itemcount from "../components/Itemcount";
 import Userlist from "../components/Userlist.jsx";
 import Button from "../components/Button.jsx";
+import formatNumber from "../components/FormatNumber.jsx";
 
-const formatNumber = (num) => {
-  if (num >= 1000000) {
-    return (num / 1000000).toFixed(1) + "M";
-  } else if (num >= 1000) {
-    return (num / 1000).toFixed(1) + "k";
-  }
-  return num;
-};
 const Candidatelist = ({head}) => {
   const currentYear = new Date().getFullYear();
   const [search, setSearch] = useState("");

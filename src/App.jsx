@@ -11,6 +11,7 @@ import Job from "./components/Job";
 import Itemcount from "./components/Itemcount";
 import Candidatelist from "./Pages/Candidatelist";
 import ProgressBar from "./components/progressBar";
+import Dashboard from "./Pages/Dashboard";
 // import Joblist from "./components/Joblist";
 // import node from "./assets/node.jpg";
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/candidatelist" element={<Candidatelist head="Candidates"/>}/>
         <Route path="/expertlist" element={<Candidatelist head="Experts"/>}/>
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
         {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
       </Routes>
     </Router>

@@ -1,38 +1,34 @@
-.container {
-    display: flex;
-    align-items: center;
-    height: 80px;
-    width: 25vw;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    background: rgba(156, 175, 183, 1);
-  }
-  
-  .image-container {
-    height: 8vh;
-    width: 8vw;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    border-radius: 15px;
-    align-items: center;
-  }
-  
-  .image {
-    height: 100%;
-    width:90%;
-  }
-  
-  .text {
-    flex: 1;
-    padding-left: 15px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .suffix {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-  }
+.ccontainer {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 21vw;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image-ccontainer {
+  height:8vh; /* Ensure this matches width for square shape */
+  width: 8vh;  /* Set the width equal to height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%; /* Rounded corners */
+  margin-left: 10px; 
+}
+
+.cimage {
+  height: 100%;
+  width: 100%; /* Ensure the image fills the container */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 10%; /* Same as .image-ccontainer for consistent rounded corners */
+}
+
+.ctext {
+  flex: 1;
+  padding-left: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

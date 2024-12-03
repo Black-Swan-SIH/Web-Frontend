@@ -58,7 +58,7 @@
   }
   .sun {
     color: #FFD700;
-    font-size: 1.5em; 
+    font-size: 1em; 
   }
   
   .sun.dark {
@@ -67,7 +67,7 @@
   
   .moon {
     color: rgb(0, 0, 0);
-    font-size: 1.5em; 
+    font-size: 1em; 
   }
   .moon.dark {
     color:white;
