@@ -121,7 +121,6 @@ const Dashboard = () => {
                 <Button
                   color="grey"
                   bgcolor="transparent"
-                  padding="2px"
                   fontSize="12px"
                   fontWeight="500"
                   icon={
@@ -139,7 +138,7 @@ const Dashboard = () => {
         <Heading fontSize="22px" fontWeight="600">
           Control Center
         </Heading>
-        <div className="flex gap-10">
+        <div className="flex gap-12">
           <Button
             bgcolor="rgba(222, 143, 110, 1)"
             padding="18px"
