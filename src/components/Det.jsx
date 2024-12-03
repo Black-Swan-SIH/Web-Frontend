@@ -6,14 +6,15 @@ const Det = ({userData,extra,children}) => {
   return (
     <div>
       <p>
+      
         <Heading
-          fontSize="26px"
+          fontSize="15px"
           color="rgba(123, 123, 123, 1)"
-          fontWeight="700"
+          fontWeight="600"
         >
           {children}
         </Heading>
-        <Heading fontSize="36px" color="var(--text-color)" fontWeight="700">
+        <Heading fontSize="15px" color="var(--text-color)" fontWeight="600">
           {userData}
           {extra}
         </Heading>
