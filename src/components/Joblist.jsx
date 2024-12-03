@@ -6,7 +6,7 @@ import clock from "../assets/clock.json";
 
 const Joblist = ({ imageSrc, jobs, application, open, lottieSrc }) => {
   return (
-    <div className="container">
+    <div className="ccontainer">
       <div className="image-container">
         <img src={imageSrc} alt="Job Image" className="image" />
       </div>
