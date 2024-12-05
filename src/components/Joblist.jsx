@@ -9,13 +9,13 @@ const Joblist = ({ imageSrc, jobs, application, open,backgColor }) => {
         <img src={imageSrc} alt="Job Image" className="cimage" />
       </div>
       <div className="ctext">
-        <Heading fontSize="15px" fontWeight="600" color="rgba(32, 32, 32, 1)" className="job">
+        <Heading fontSize="15px" fontWeight="600" color="var(--text-color5)" className="job">
           {jobs}
         </Heading>
-        <Heading fontSize="11px" fontWeight="500" color="rgba(43, 43, 43, 1)" className="application">
+        <Heading fontSize="11px" fontWeight="500" color="var(--text-color8)" className="application">
           {application}
         </Heading>
-        <Heading fontSize="8px" fontWeight="500" color="rgba(61, 61, 61, 1)"className="open">
+        <Heading fontSize="8px" fontWeight="500" color="var(--text-color11)"className="open">
           {open}
         </Heading>
       </div>

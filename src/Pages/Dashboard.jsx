@@ -34,7 +34,7 @@ const Dashboard = () => {
     <div className="dash">
       <div className="dashboard">
         <div className="first-column">
-          <Heading fontSize="32px" fontWeight="600">
+          <Heading fontSize="30px" fontWeight="600" color="var(--text-color9)">
             Dashboard
           </Heading>
           <div className="items">
@@ -43,7 +43,7 @@ const Dashboard = () => {
             <CandidateCount head="Job Openings" value={formatNumber(total)} />
           </div>
           <div className="my-7">
-            <Heading fontSize="20px" fontWeight="600" color="rgba(66, 66, 66, 1)">
+            <Heading fontSize="20px" fontWeight="600" color="var(--text-color12)">
               Top Experts
             </Heading>
           </div>
@@ -61,7 +61,7 @@ const Dashboard = () => {
               {experts.length > 3 && (
                 <div className="py-2">
                   <Button
-                    color="grey"
+                    color="var(--text-color14)"
                     bgcolor="transparent"
                     padding="2px"
                     fontSize="12px"
@@ -83,7 +83,7 @@ const Dashboard = () => {
         <div className="second-column">
           <div className="sfirst">
             <Heading
-              color="rgba(113, 113, 113, 1)"
+              color="var(--text-color13)"
               fontSize="13px"
               fontWeight="500"
             >
@@ -91,16 +91,16 @@ const Dashboard = () => {
               come back wrapped in it, but I will be back for sure."
             </Heading>
             <Heading
-              color="rgba(13, 13, 13, 1)"
+              color="var(--text-color2)"
               fontSize="14px"
               fontWeight="600"
             >
               ~ Captain Vikram Batra, Param Vir Chakra
             </Heading>
           </div>
-          <div className="rec">
+          <div className="rec ">
             <Heading
-              color="rgba(66, 66, 66, 1)"
+              color="var(--text-color12)"
               fontSize="20px"
               fontWeight="600"
             >
@@ -119,7 +119,7 @@ const Dashboard = () => {
             {jobs.length > 2 && (
               <div className="py-2">
                 <Button
-                  color="grey"
+                  color="var(--text-color14)"
                   bgcolor="transparent"
                   fontSize="12px"
                   fontWeight="500"
@@ -135,16 +135,16 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="controlcenter">
-        <Heading fontSize="22px" fontWeight="600">
+        <Heading fontSize="21px" fontWeight="600" color="var(--text-color12)">
           Control Center
         </Heading>
-        <div className="flex gap-12">
+        <div className="flex gap-10">
           <Button
             bgcolor="rgba(222, 143, 110, 1)"
             padding="18px"
             fontSize="14px"
             fontWeight="600"
-            color="rgba(39, 39, 39, 1)"
+            color="var(--text-color7)"
             width="170px"
             borderRadius="8px"
           >
@@ -152,10 +152,10 @@ const Dashboard = () => {
           </Button>
           <Button
             bgcolor="rgba(156, 175, 183, 1)"
-            padding="2px"
+            padding="18px"
             fontSize="14px"
             fontWeight="600"
-            color="rgba(39, 39, 39, 1)"
+            color="var(--text-color7)"
             width="170px"
             borderRadius="8px"
           >
@@ -163,10 +163,10 @@ const Dashboard = () => {
           </Button>
           <Button
             bgcolor="rgba(115, 167, 160, 1)"
-            padding="2px"
+            padding="18px"
             fontSize="14px"
             fontWeight="600"
-            color="rgba(39, 39, 39, 1)"
+            color="var(--text-color7)"
             width="170px"
             borderRadius="8px"
           >

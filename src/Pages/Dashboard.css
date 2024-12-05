@@ -15,10 +15,15 @@
     height: 60%;
     overflow: auto; 
 }
+.first-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .controlcenter{
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    padding: 0 1em;
     width: 65%;
     height: auto;
     gap:15px;
@@ -41,11 +46,11 @@
 .sfirst{
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
 }
 
 .rec{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 7px;
 }

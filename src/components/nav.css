@@ -1,21 +1,3 @@
-:root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --shadow: rgba(0, 0, 0, 0.1)
-}
-
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #ffffff;
-  --shadow:rgba(255, 255, 255, 0.1);
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  margin: 0;
-}
-
 .header {
   position: fixed;
   top: 3%;
@@ -41,6 +23,7 @@ body {
 b {
   font-size: 1.5em;
   font-weight: bold;
+  color: var(--text-color1);
 }
 .hindi {
   font-size: 1em;
@@ -51,8 +34,8 @@ b {
   padding: 0.5em 1em;
   border: none;
   border-radius: 0.3em;
-  background-color: var(--text-color);
-  color: var(--bg-color);
+  background-color: var(--text-color1);
+  color: var(--bg-color1);
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
