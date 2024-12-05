@@ -5,7 +5,7 @@ import ProgressBar from "./progressBar";
 
 const Userlist = ({ imageSrc, name, age, work, value }) => {
   return (
-    <div className="container">
+    <div className="ucontainer">
       <div className="image-container">
         <img src={imageSrc} alt="Job Image" className="image" />
       </div>

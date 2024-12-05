@@ -1,5 +1,6 @@
 import React from 'react';
 import ExpandableDiv from './keySkills';
+import { useNavigate } from 'react-router-dom';
 
 function Job() {
     const renderCircles = (count) => {
@@ -16,15 +17,30 @@ function Job() {
           ></div>
         ));
       };
+
+    const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/candidatelist'); // Replace '/another-page' with your route
+  };
+
+  
+  const navigate1 = useNavigate();
+
+  const handleClick1 = () => {
+    navigate1(' /expertlist'); // Replace '/another-page' with your route
+  };
+
+ 
     return ( 
       <>
         
-<div className="pl-5">
-    <div className="ml-5 pl-5">
-        <div className="container ml-5 pl-5">
-            <div className="container ml-5 pl-5">
-                <div className="container ml-5 pl-5">
-                    <div className="row ml-5 pl-5">
+<div className=" container mt-5 pt-5 pl-5">
+    <div className="container ml-5 mt-5 pt-5 pl-5">
+        <div className="container ml-5 mt-5 pt-5 pl-5">
+            <div className="container ml-5 pl-5 mt-5 pt-5">
+                <div className="container ml-5 pl-5 mt-5 pt-5">
+                    <div className="row ml-5 pl-5 mt-5 pt-5">
        
                         <div className="col-lg-8 col-md-12 mt-5 pt-5">
                             <h1 className="bold" style={{fontSize:"60px", fontWeight: 700 }}>Node.js Developer</h1>
@@ -54,7 +70,7 @@ function Job() {
 
        
      
-                        <div className="col-lg-4 col-md-12 mt-5 pt-5">
+                        <div className="col-lg-4 col-md-12 mt-5 pt-5" onClick={handleClick}>
          
                             <div className="mt-4 mt-5 pt-5 ml-5 pl-5">
                                 <h4 className="m-3" style={{fontSize:"25px" , fontWeight: 700}}>Experts</h4>
@@ -64,7 +80,7 @@ function Job() {
                             </div>
 
       
-                            <div className="mt-4 mt-5 pt-5 ml-5 pl-5">
+                            <div className="mt-4 mt-5 pt-5 ml-5 pl-5" onClick={handleClick}>
                                 <h4 className="m-3" style={{fontSize:"25px" , fontWeight: 700}}>Candidates</h4>
                                 <div style={{display: 'flex', flexWrap: 'wrap', gap: '8px', maxWidth: '90%'}}>
                                     {renderCircles(27)}  <p className="text-muted mt-2">+99 more</p>
