@@ -10,20 +10,20 @@ const Userlist = ({ imageSrc, name, age, work, value }) => {
         <img src={imageSrc} alt="Job Image" className="image" />
       </div>
       <div className="text">
-        <Heading fontSize="20px" fontWeight="600" className="name" color="rgba(32, 32, 32, 1)"        >
+        <Heading fontSize="20px" fontWeight="600" className="name" color="var(--text-color5)"        >
           {name}
         </Heading>
         <div className="age">
-          <Heading fontSize="12px" fontWeight="500" color="rgba(90, 90, 90, 1)">Age:</Heading>
-          <Heading fontSize="12px" fontWeight="500">{age}</Heading>
-          <Heading fontSize="12px" fontWeight="500">Years</Heading>
+          <Heading fontSize="12px" fontWeight="500" color="var(--text-color19)">Age:</Heading>
+          <Heading fontSize="12px" fontWeight="500" color="var(--text-color20)">{age}</Heading>
+          <Heading fontSize="12px" fontWeight="500" color="var(--text-color20)">Years</Heading>
         </div>
-        <Heading fontSize="10px" fontWeight="500" className="role" color="rgba(61, 61, 61, 1)">
+        <Heading fontSize="10px" fontWeight="500" className="role" color="var(--text-color11)">
           {work}
         </Heading>
       </div>
       <div className="suffix">
-        <ProgressBar value={value} color="rgba(222, 143, 110, 1)" />
+        <ProgressBar value={value} color="var(--bar-color)" />
       </div>
     </div>
   );

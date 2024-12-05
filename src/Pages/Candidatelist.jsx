@@ -89,7 +89,7 @@ const Candidatelist = ({head}) => {
   return (
     <div className="cont">
       <div className="head">
-        <Heading fontSize="45px" fontWeight="600">
+        <Heading fontSize="40px" fontWeight="600" color="var(--text-color9)">
           {head}
         </Heading>
         <div className="items">
@@ -101,7 +101,7 @@ const Candidatelist = ({head}) => {
       <div className="boxes">
         <div className="search-box">
           <span className="search-prefix">
-            <i className="fas fa-search" style={{ fontSize: "20px" }}></i>{" "}
+            <i className="fas fa-search" style={{ fontSize: "16px" }}></i>{" "}
           </span>
           <div className="searchkk">
             <input
@@ -115,7 +115,7 @@ const Candidatelist = ({head}) => {
             <Button
               bgcolor="rgba(190, 190, 190, 1)"
               color="black"
-              padding="3px 12px"
+              padding="5px 12px"
             >
               Ctrl+K
             </Button>

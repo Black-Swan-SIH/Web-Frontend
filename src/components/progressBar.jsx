@@ -16,7 +16,7 @@ function ProgressBar({ value, color }) {
             transformOrigin: "center center",
           },
           trail: {
-            stroke: `rgba(39, 39, 39, 1)`,
+            stroke: `var(--text-color7)`,
             strokeWidth: 12,
             transformOrigin: "center center",
           },

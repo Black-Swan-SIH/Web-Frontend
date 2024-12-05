@@ -1,7 +1,7 @@
 .ccontainer {
   display: flex;
   align-items: center;
-  height: 80px;
+  height: 65px;
   width: 25vw;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -10,13 +10,13 @@
 }
 
 .image-ccontainer {
-  height:8vh; /* Ensure this matches width for square shape */
-  width: 8vh;  /* Set the width equal to height */
+  height:8vh;
+  width: 9vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10%; /* Rounded corners */
+  border-radius: 10%;
   margin-left: 10px; 
 }
 
