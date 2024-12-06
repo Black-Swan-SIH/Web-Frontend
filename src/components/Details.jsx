@@ -19,7 +19,10 @@ function UserInfo({ id }) {
     <div>
       {userData ? (
         <div>
-          <Det userData={userData.name}></Det>
+          <div className="dog"style={{fontSize:"2px"}}>
+          <Det userData={userData.name} style={{ fontSize: "30px" }}></Det>
+          </div>
+         
           <Det userData={userData.age} extra=" Years">Age</Det>
           <Det userData={userData.post}>Experience</Det>
         </div>
