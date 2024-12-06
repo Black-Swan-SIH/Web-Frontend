@@ -3,7 +3,8 @@
     flex-direction: column;
     width: 100%;
     max-width: 800px;
-    margin: 0 0px 15px 10vw;
+    margin: 0 0px 10px 12.2vw;
+    align-self: flex-start;
   }
   
   .search-box {
@@ -13,7 +14,7 @@
     margin: 20px 0;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 7px;
+    border-radius: 8px;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -61,7 +62,7 @@
     padding: 5px 8px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 7px;
+    border-radius: 8px;
     background-color: var(--bg-color);
     color: #333;
     appearance: none;
@@ -69,7 +70,9 @@
     background-image: url("https://cdn-icons-png.flaticon.com/512/32/32195.png");
     background-repeat: no-repeat;
     background-position: right 10px center;
-    background-size: 15px;
+    background-size: 12px;
+    transition: background-color 0.3s ease;
+
   }
   
   .sort-dropdown:focus {
@@ -94,7 +97,8 @@
     background-image: url("https://cdn-icons-png.flaticon.com/512/32/32195.png");
     background-repeat: no-repeat;
     background-position: right 10px center;
-    background-size: 15px;
+    background-size: 12px;
+    transition: background-color 0.3s ease;
   }
   
   .sort-dropdown-all:focus {

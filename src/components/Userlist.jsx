@@ -14,9 +14,9 @@ const Userlist = ({ imageSrc, name, age, work, value }) => {
           {name}
         </Heading>
         <div className="age">
-          <Heading fontSize="12px" fontWeight="500" color="var(--text-color19)">Age:</Heading>
-          <Heading fontSize="12px" fontWeight="500" color="var(--text-color20)">{age}</Heading>
-          <Heading fontSize="12px" fontWeight="500" color="var(--text-color20)">Years</Heading>
+          <Heading fontSize="11.5px" fontWeight="400" color="var(--text-color19)">Age:</Heading>
+          <Heading fontSize="12.5px" fontWeight="550" color="var(--text-color20)">{age}</Heading>
+          <Heading fontSize="12.5px" fontWeight="550" color="var(--text-color20)">Years</Heading>
         </div>
         <Heading fontSize="10px" fontWeight="500" className="role" color="var(--text-color11)">
           {work}

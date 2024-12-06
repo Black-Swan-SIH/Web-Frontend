@@ -3,6 +3,7 @@ import "./Nav2.css";
 import Button from "./Button";
 import proicon from "../assets/profile.png";
 import addition from "../assets/addition.svg";
+import { width } from "@mui/system";
 
 function NavBar2() {
   const [darkMode, setDarkMode] = useState(false);
@@ -19,15 +20,20 @@ function NavBar2() {
     <header className="header">
       <b>RAC, DRDO</b>
       <div className="flex gap-3">
-      <Button fontSize="14px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="9px">Dashboard</Button>
-      <Button fontSize="14px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="9px">About</Button>
-      <Button fontSize="14px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="9px">Contact</Button>
+      <Button fontSize="16px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="12px">Dashboard</Button>
+      <Button fontSize="16px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="12px">About</Button>
+      <Button fontSize="16px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="12px">Contact</Button>
       </div>
       <div className="nav">
-        <img src={proicon} alt="Profile Icon" style={{borderRadius: "20%", width: "16px", height: "16px"}} />
+        <img src={proicon} alt="Profile Icon" style={{borderRadius: "20%", width: "18px", height: "18px"}} />
+        <div style={
+          {
+            width: "2px"
+          }
+        }></div>
         <img src={addition} alt="Addition Icon" style={{borderRadius: "25%", width: "20px", height: "20px"}} />
         <Button bgcolor="transparent" color="var(--text-color10)" fontWeight="600" fontSize="14px">हिन्दी</Button>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center justify-center">
           <div className={`sun ${darkMode ? 'dark' : 'light'}`}>
             <i class="fa-solid fa-sun"></i>
           </div>

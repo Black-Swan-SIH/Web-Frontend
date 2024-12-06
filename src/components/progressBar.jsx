@@ -27,7 +27,7 @@ function ProgressBar({ value, color }) {
           src="https://cdn-icons-png.flaticon.com/256/552/552721.png"
           alt="doge"
         /> */}
-        <div style={{ fontSize: 18}}>
+        <div style={{ fontSize: 17}}>
           <strong>{value}</strong>
         </div>
       </CircularProgressbarWithChildren>

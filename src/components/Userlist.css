@@ -2,19 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 90px;
   width: 30rem;
-  border: 1px solid #ccc; /* Clean border for better separation */
-  border-radius: 10px;
-  background: rgba(156, 175, 183, 1); /* Background remains the same */
-  overflow: hidden; /* Ensures no child element overflows */
-  padding: 0 10px; /* Add some horizontal padding for better spacing */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+  border-radius: 12px;
+  background-color: #9CAFB7;
+  background: #9CAFB7;
+  overflow: hidden;
+  padding: 0 7px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .image-container {
-  height: 6rem;
-  width: 6rem; /* Ensure the container remains square */
+  height: 75px;
+  width: 75px; /* Ensure the container remains square */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,12 +27,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures the image fills the container nicely */
+  aspect-ratio: 1/1; /* Keeps the image square */
   border-radius: 10px; /* Matches container’s border-radius for consistency */
 }
 
 .text {
   flex: 1; /* Allows the text to expand and take up available space */
   padding-left: 15px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
   overflow: hidden; /* Prevents text overflow */
   white-space: nowrap; /* Ensures text doesn’t wrap */
   text-overflow: ellipsis; /* Adds ellipsis for truncated text */
@@ -48,9 +52,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%; /* Keeps it circular */
-  background-color: rgba(222, 143, 110, 0.1); /* Optional: Light background for contrast */
   overflow: hidden; /* Ensures content stays within bounds */
 }

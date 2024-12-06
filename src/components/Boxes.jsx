@@ -21,7 +21,7 @@ const Boxes = ({ children, searchValue, onSearchChange, sortOption, onSortChange
           <Button
               bgcolor="rgba(190, 190, 190, 1)"
               color="black"
-              fontWeight="600"
+              fontWeight="500"
               fontSize="14px"
               padding="3px 12px"
             >

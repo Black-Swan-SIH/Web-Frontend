@@ -116,7 +116,7 @@ const Candidatelist = ({ head,page }) => {
         searchInputRef={searchInputRef}
         handleFocus={handleFocus}
       />
-      <div className="my-9 w-[60%] h-0.5 bg-gray-400 mx-auto"></div>
+      <div className="my-[40px] w-[60%] h-[0.8px] bg-gray-400"></div>
       <div className="scrollable-container">
         <div className="person-list">
           {currentPage()}
