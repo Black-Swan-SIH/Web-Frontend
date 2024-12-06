@@ -12,6 +12,7 @@ import Itemcount from "./components/Itemcount";
 import Candidatelist from "./Pages/Candidatelist";
 import ProgressBar from "./components/progressBar";
 import Dashboard from "./Pages/Dashboard";
+import Userlist from "./components/Userlist";
 // import Joblist from "./components/Joblist";
 // import node from "./assets/node.jpg";
 
@@ -27,7 +28,7 @@ function App() {
         <Route path="/experts" element={<Experts />} />
         <Route path="/job" element={<Job />} />
         <Route path="/itemcount" element={<Itemcount head="Total Experts" value="11.26K"/>} />     
-        <Route path="/candidatelist" element={<Candidatelist head="Candidates"/>}/>
+        <Route path="/candidatelist" element={<Candidatelist head="Candidates" page="Userlist"/>}/>
         <Route path="/expertlist" element={<Candidatelist head="Experts"/>}/>
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>

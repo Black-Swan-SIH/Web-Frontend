@@ -8,6 +8,7 @@
 }
 :root {
   --bg-color: rgb(255, 255, 255);
+  --bg-color2: rgba(17,24,33,1);
   --text-color1: rgba(3, 7, 18, 1);
   --text-color2: rgba(13, 13, 13, 1);
   --text-color3: rgba(26, 26, 26, 1);
@@ -29,6 +30,7 @@
   --text-color19: rgba(90,90,90, 1);
   --text-color20: rgba(34,34,34, 1);
   --text-color21: rgba(40,40,40, 1);
+  --text-color22: rgba(242,245,251, 1);
   --border-color1: rgba(0, 0, 0, 1);
   --border-color2: rgba(255, 255, 255, 0.1);
   --bar-color:rgba(222, 143, 110, 1);
@@ -56,6 +58,8 @@
   --text-color17: rgba(255, 255, 255, 1);
   --text-color18: rgba(255, 255, 255, 1);
   --text-color19: rgba(255, 255, 255, 1);
+  --text-color20: rgba(255, 255, 255, 1);
+  --text-color21: rgba(255, 255, 255, 1);
   --border-color1: rgba(255, 255, 255, 1);
   --border-color2: rgb(255, 253, 253);
   --shadow: rgba(255, 255, 255, 0.1);
@@ -72,74 +76,4 @@ body {
   height: 100vh;
   background-color: var(--bg-color);
   color: var(--text-color);
-}
-
-.switch {
-  margin-top: 2px;
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 15px;
-  opacity: 0.7;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: white;
-  background-color: rgb(218, 212, 212);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 8px;
-  width: 8px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: lightgrey;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(14px);
-  -ms-transform: translateX(14px);
-  transform: translateX(14px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-i {
-  opacity: 0.3;
-  border-right: 15px;
 }
