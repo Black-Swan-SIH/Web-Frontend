@@ -6,7 +6,6 @@ import "./custom.css";
 import Details from "./Details";
 import Skills from "./Skills";
 import { RecoilRoot } from "recoil";
-import ProgressBar from "./progressBar";
 import TopSkills from "./topSkills";
 import Cards from "./Card";
 
@@ -26,11 +25,11 @@ function Profile({ value, color, userId }) {
 
    
           
-          <div className="">
+          <div className="conatiner ml-5 pl-5" style={{marginLeft:"140px",width:"1200px"}} >
       {/* Header Section */}
-      <div className="container mt-5 pt-5">
-        <div className="row mt-5 pt-5 ">
-        <div className="col-md-4 mt-5 pt-5 mb-5 pb-5" style={{border:"1px black solid",borderRadius:"10px", width: "200px",backgroundColor:"grey",marginTop:"100px",marginLeft:"20px" }}>
+      <div className="container mt-5 pt-5" style={{marginLeft:"60px"}}>
+        <div className="container row mt-5 pt-5 ">
+        <div className="col-md-4 mt-5 pt-5 mb-5 pb-5" style={{border:"1px black solid",borderRadius:"20px", width: "200px",backgroundColor:"grey",marginTop:"100px",marginLeft:"20px" }}>
         
           <img
            
@@ -53,9 +52,9 @@ function Profile({ value, color, userId }) {
       </div>
    
 
-      <div className="row g-4">
+      <div className="container row g-4 ml-5 pl-5">
     
-        <div className="px-5"></div>
+        <div className="px-5 container ml-5 pl-5">
         <div className="col-md-5 pl-5 pr-5 pt-5" style={{marginLeft:"0px"}}>
           <div className="px-5 mx-5">
             <h4 style={{fontSize:"30px",fontWeight:"600", marginBottom:"10px"}}>Top Skills</h4>
@@ -115,13 +114,43 @@ function Profile({ value, color, userId }) {
           marginLeft:"15px"
         }}>
           <h4 style={{ marginBottom: "-15px", fontSize:"35px",fontWeight:"600",marginRight:"15px"}}>Profile Score</h4>
-        <ProgressBar value={value} color="#fa8072"/>
-       
+        {/* <ProgressBar value={value} color="#fa8072"/>
+        */}
+<div style={{ transform: "scale(0.7)" }}>
+<CircularProgressbarWithChildren
+        value={value}
+    
+        styles={{
+          path: {
+            stroke: "#fa8072",
+            strokeWidth: 8,
+            transformOrigin: "center center",
+          },
+          trail: {
+            stroke: `var(--text-color7)`,
+            strokeWidth: 8,
+            transformOrigin: "center center",
+          },
+        }}
+      >
+        {/* <img
+          style={{ width: 250, marginTop: 105 }}
+          src="https://cdn-icons-png.flaticon.com/256/552/552721.png"
+          alt="doge"
+        /> */}
+        <div style={{ fontSize: 36,marginTop:"340px"}}>
+          <strong>{value} / 100</strong>
+        </div>
+      </CircularProgressbarWithChildren>
+</div>
+
         </div>
         <hr style={{marginTop:"25px",fontWeight:"600"}}></hr>  
         <p style={{textAlign: "center", marginTop:"15px"}} className="text-muted">Best Interviewer for</p>
         <h1  style={{textAlign: "center", fontSize:"20px", fontWeight:"500"}}>Flutter Developer</h1>
         </div>
+        </div>
+ 
       </div>
     </div>
    

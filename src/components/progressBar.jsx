@@ -12,12 +12,12 @@ function ProgressBar({ value, color }) {
         styles={{
           path: {
             stroke: color,
-            strokeWidth: 12,
+            strokeWidth: 10,
             transformOrigin: "center center",
           },
           trail: {
             stroke: `var(--text-color7)`,
-            strokeWidth: 12,
+            strokeWidth: 10,
             transformOrigin: "center center",
           },
         }}
