@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Nav2.css";
 import Button from "./Button";
 import proicon from "../assets/profile.png";
-import addition from "../assets/addition.png";
+import addition from "../assets/addition.svg";
 
 function NavBar2() {
   const [darkMode, setDarkMode] = useState(false);
@@ -25,7 +25,7 @@ function NavBar2() {
       </div>
       <div className="nav">
         <img src={proicon} alt="Profile Icon" style={{borderRadius: "20%", width: "16px", height: "16px"}} />
-        <img src={addition} alt="Addition Icon" style={{borderRadius: "25%", width: "20px", height: "20px" }} />
+        <img src={addition} alt="Addition Icon" style={{borderRadius: "25%", width: "20px", height: "20px"}} />
         <Button bgcolor="transparent" color="var(--text-color10)" fontWeight="600" fontSize="14px">हिन्दी</Button>
         <div className="flex gap-2">
           <div className={`sun ${darkMode ? 'dark' : 'light'}`}>
