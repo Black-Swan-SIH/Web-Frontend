@@ -34,7 +34,7 @@ const Dashboard = () => {
     <div className="dash">
       <div className="dashboard">
         <div className="first-column">
-          <Heading fontSize="30px" fontWeight="600" color="var(--text-color9)">
+          <Heading fontSize="40px" fontWeight="600" color="var(--text-color9)">
             Dashboard
           </Heading>
           <div className="items">
@@ -42,7 +42,7 @@ const Dashboard = () => {
             <CandidateCount head="Experts" value={formatNumber(total)} />
             <CandidateCount head="Job Openings" value={formatNumber(total)} />
           </div>
-          <div className="my-7">
+          <div className="mt-[25px] mb-[20px]">
             <Heading fontSize="20px" fontWeight="600" color="var(--text-color12)">
               Top Experts
             </Heading>
@@ -59,7 +59,7 @@ const Dashboard = () => {
                 />
               ))}
               {experts.length > 3 && (
-                <div className="py-2">
+                <div className="py-5">
                   <Button
                     color="var(--text-color14)"
                     bgcolor="transparent"
@@ -77,7 +77,7 @@ const Dashboard = () => {
                 </div>
               )}
             </div>
-            <div className="mx-9 w-0.5 h-56 bg-gray-500"></div>
+            <div className="mx-[100px] w-0.5 h-60 bg-gray-500"></div>
           </div>
         </div>
         <div className="second-column">
@@ -117,7 +117,7 @@ const Dashboard = () => {
               />
             ))}
             {jobs.length > 2 && (
-              <div className="py-2">
+              <div className="py-5">
                 <Button
                   color="var(--text-color14)"
                   bgcolor="transparent"
