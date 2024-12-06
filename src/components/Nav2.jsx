@@ -18,7 +18,7 @@ function NavBar2() {
   return (
     <header className="header">
       <b>RAC, DRDO</b>
-     <div className="flex gap-3">
+      <div className="flex gap-3">
       <Button fontSize="14px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="9px">Dashboard</Button>
       <Button fontSize="14px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="9px">About</Button>
       <Button fontSize="14px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="9px">Contact</Button>
