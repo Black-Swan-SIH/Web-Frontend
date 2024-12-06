@@ -8,8 +8,9 @@ import Userlist from "../components/Userlist.jsx";
 import formatNumber from "../components/FormatNumber.jsx";
 import Boxes from "../components/Boxes.jsx";
 import { handleFocus } from "../components/Functions.jsx";
+import Panel from "../components/Panel.jsx";
 
-const Candidatelist = ({ head }) => {
+const Candidatelist = ({ head,page }) => {
   const currentYear = new Date().getFullYear();
   const [search, setSearch] = useState("");
   const [sortOption, setSortOption] = useState("");
@@ -18,8 +19,26 @@ const Candidatelist = ({ head }) => {
   const total = data.length;
   const maleCount = data.filter((user) => user.gender === "Male").length;
   const femaleCount = data.filter((user) => user.gender === "Female").length;
-
   const searchInputRef = useRef(null);
+
+  const currentPage = () => {
+    if (page === "Userlist") {
+      return sortedData.map((person) => (
+        <Userlist
+          key={person.id}
+          imageSrc={node}
+          name={person.first_name}
+          age={currentYear - person.age}
+          work={person.work}
+          value={person.progress}
+        />
+      ));
+    }
+    else if(page === "Panel"){
+      return <Panel/>
+    }
+    return null;
+  };
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -100,16 +119,7 @@ const Candidatelist = ({ head }) => {
       <div className="my-9 w-[60%] h-0.5 bg-gray-400 mx-auto"></div>
       <div className="scrollable-container">
         <div className="person-list">
-          {sortedData.map((person, index) => (
-            <Userlist
-              key={person.id}
-              imageSrc={node}
-              name={person.first_name}
-              age={currentYear - person.age}
-              work={person.work}
-              value={person.progress}
-            />
-          ))}
+          {currentPage()}
         </div>
       </div>
     </div>
