@@ -34,6 +34,10 @@
   border-radius: 5px;
   padding: 10px;
 }
+.panel-list {
+  width: 85%;
+  display: grid;
+}
 
 .person-list {
   display: grid;

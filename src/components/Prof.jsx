@@ -16,10 +16,10 @@ const Prof = ({
   nameFontSize,
   nameColor,
   FontSize1,
-    FontSize2,
+  FontSize2,
 }) => {
   return (
-    <div className="flex" style={{ gap: gap }}>
+    <div className="flex" style={{ gap: gap}}>
       <div
         className="image-pcontainer"
         style={{ height: height, width: width, borderRadius: borderRadius }}
@@ -31,23 +31,71 @@ const Prof = ({
           {name}
         </Heading>
         <div className="flex gap-8">
-          <div className="flex  gap-2">
-            <Heading fontSize={FontSize1} fontWeight="600" color="var(--text-color23)">Unit:</Heading>
-            <Heading fontSize={FontSize2} fontWeight="600" color="var(--text-color24)">{unit}</Heading>
+          <div className="flex  gap-3">
+            <Heading
+              fontSize={FontSize1}
+              fontWeight="600"
+              color="var(--text-color23)"
+            >
+              Unit:
+            </Heading>
+            <Heading
+              fontSize={FontSize2}
+              fontWeight="600"
+              color="var(--text-color24)"
+            >
+              {unit}
+            </Heading>
           </div>
-          <div className="flex gap-2">
-            <Heading fontSize={FontSize1} fontWeight="600" color="var(--text-color23)">Age:</Heading>
-            <Heading fontSize={FontSize2} fontWeight="600" color="var(--text-color24)">{age}</Heading>
+          <div className="flex gap-3">
+            <Heading
+              fontSize={FontSize1}
+              fontWeight="600"
+              color="var(--text-color23)"
+            >
+              Age:
+            </Heading>
+            <Heading
+              fontSize={FontSize2}
+              fontWeight="600"
+              color="var(--text-color24)"
+            >
+              {age}
+            </Heading>
           </div>
         </div>
         <div className="flex gap-8">
-          <div className="flex  gap-2">
-            <Heading fontSize={FontSize1} fontWeight="600" color="var(--text-color23)">Pronouns:</Heading>
-            <Heading fontSize={FontSize2} fontWeight="600" color="var(--text-color24)">{pronoun}</Heading>
+          <div className="flex  gap-3">
+            <Heading
+              fontSize={FontSize1}
+              fontWeight="600"
+              color="var(--text-color23)"
+            >
+              Pronouns:
+            </Heading>
+            <Heading
+              fontSize={FontSize2}
+              fontWeight="600"
+              color="var(--text-color24)"
+            >
+              {pronoun}
+            </Heading>
           </div>
-          <div className="flex gap-2">
-            <Heading fontSize={FontSize1} fontWeight="600" color="var(--text-color23)">Experience:</Heading>
-            <Heading fontSize={FontSize2} fontWeight="600" color="var(--text-color24)">{experience}</Heading>
+          <div className="flex gap-3">
+            <Heading
+              fontSize={FontSize1}
+              fontWeight="600"
+              color="var(--text-color23)"
+            >
+              Experience:
+            </Heading>
+            <Heading
+              fontSize={FontSize2}
+              fontWeight="600"
+              color="var(--text-color24)"
+            >
+              {experience}
+            </Heading>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ const data2 = [
   {
     id: 2,
     name: "Emilee Kilfedder",
-    unit: "Technological University (Banmaw)",
+    unit: "Technological",
     age: 2,
     pronoun: "Female",
     experience: "Eagle",
@@ -41,12 +41,12 @@ const data2 = [
     experience: "Cadillac",
     profileScore: 4,
     reviews: 4,
-    interview: "Payment Adjustment Coordinator",
+    interview: "Payment Adjustment",
   },
   {
     id: 5,
     name: "Bond Moon",
-    unit: "Wesleyan University Philippines",
+    unit: "Wesleyan University",
     age: 5,
     pronoun: "Male",
     experience: "Hyundai",
@@ -57,7 +57,7 @@ const data2 = [
   {
     id: 6,
     name: "Nathanael Gregon",
-    unit: "Southern College of Optometry",
+    unit: "Southern College",
     age: 6,
     pronoun: "Male",
     experience: "Ram",
@@ -68,7 +68,7 @@ const data2 = [
   {
     id: 7,
     name: "Vallie Killock",
-    unit: "Universidade Federal de Ouro Preto",
+    unit: "Universidade Federal",
     age: 7,
     pronoun: "Female",
     experience: "Chrysler",
@@ -79,7 +79,7 @@ const data2 = [
   {
     id: 8,
     name: "Derward Penhearow",
-    unit: "Institut Armand-Frappier, Université du Québec",
+    unit: "Institut Armand-Frappier",
     age: 8,
     pronoun: "Male",
     experience: "Mercury",
@@ -107,7 +107,7 @@ const data2 = [
     experience: "Volvo",
     profileScore: 10,
     reviews: 10,
-    interview: "Human Resources Assistant II",
+    interview: "Human",
   },
 ];
 export default data2;
