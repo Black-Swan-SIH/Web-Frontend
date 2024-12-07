@@ -9,6 +9,7 @@ import formatNumber from "../components/FormatNumber.jsx";
 import Boxes from "../components/Boxes.jsx";
 import { handleFocus } from "../components/Functions.jsx";
 import Panel from "../components/Panel.jsx";
+import data2 from "../Data2.jsx";
 
 const Candidatelist = ({ head,page }) => {
   const currentYear = new Date().getFullYear();
@@ -35,7 +36,20 @@ const Candidatelist = ({ head,page }) => {
       ));
     }
     else if(page === "Panel"){
-      return <Panel/>
+      return data2.map((person) => (
+        <Panel
+          key={person.id}
+          imageSrc={node}
+          name={person.name}
+          unit={person.unit}
+          age={person.age}
+          pronoun={person.pronoun}
+          experience={person.experience}
+          profileScore={person.profileScore}
+          reviews={person.reviews}
+          interview={person.interview}
+        />
+      ));
     }
     return null;
   };
@@ -118,7 +132,7 @@ const Candidatelist = ({ head,page }) => {
       />
       <div className="my-[40px] w-[60%] h-[0.8px] bg-gray-400"></div>
       <div className="scrollable-container">
-        <div className="person-list">
+        <div className={currentPage() === "Userlist" ? "person-list" : "panel-list"}>
           {currentPage()}
         </div>
       </div>

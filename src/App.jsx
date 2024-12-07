@@ -29,6 +29,7 @@ function App() {
         <Route path="/job" element={<Job />} />
         <Route path="/itemcount" element={<Itemcount head="Total Experts" value="11.26K"/>} />     
         <Route path="/candidatelist" element={<Candidatelist head="Candidates" page="Userlist"/>}/>
+        <Route path="/panel" element={<Candidatelist head="Select your panel" page="Panel"/>}/>
         <Route path="/expertlist" element={<Candidatelist head="Experts"/>}/>
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
