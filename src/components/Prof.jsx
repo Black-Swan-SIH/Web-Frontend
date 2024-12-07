@@ -17,6 +17,8 @@ const Prof = ({
   nameColor,
   FontSize1,
   FontSize2,
+  marginTop,
+  marginBottom
 }) => {
   return (
     <div className="flex" style={{ gap: gap}}>
@@ -26,11 +28,27 @@ const Prof = ({
       >
         <img src={imageSrc} alt="profile" className="pimage" />
       </div>
-      <div>
-        <Heading fontSize={nameFontSize} fontWeight="600" color={nameColor}>
+      <div style={{marginTop:marginTop}}>
+            
+   <button className="mt-5" 
+   style={{
+    marginRight:"-10px",
+    border: "1px solid black",
+    backgroundColor: "white",
+    marginTop: "15px",
+    width: "70px",
+    height: "20px",
+    borderRadius: "20px",
+    color: "grey",
+    borderColor: "grey",
+    // marginLeft:"265px"
+  }}
+   >verified</button>
+        
+        <Heading fontSize={nameFontSize} fontWeight="600" color={nameColor} >
           {name}
         </Heading>
-        <div className="flex gap-8">
+        <div className="flex gap-8" style={{marginBottom:marginBottom}}>
           <div className="flex  gap-3">
             <Heading
               fontSize={FontSize1}
@@ -98,6 +116,21 @@ const Prof = ({
             </Heading>
           </div>
         </div>
+        <button
+                  className="mt-5"
+                  style={{
+                    color: "white",
+                    backgroundColor: "black",
+                    marginBottom: "15px",
+                    width: "120px",
+                    height: "30px",
+                    borderRadius: "10px",
+                   
+                    marginTop:"15px"
+                  }}
+                >
+                  Edit Profile
+                </button>
       </div>
     </div>
   );
