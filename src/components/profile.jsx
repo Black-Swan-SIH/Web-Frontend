@@ -29,23 +29,7 @@ function ProfilePage({ value, color, userId }) {
         <div className="container mt-5 pt-5" style={{ marginLeft: "30px" }}>
           <div className="container row mt-5 pt-5 " style={{ marginTop: "90px" }}>
        
-{/*           
-          <button
-                  className="mt-5 mb-5"
-                  style={{
-                    border: "1px solid black",
-                    backgroundColor: "white",
-                    marginTop: "25px",
-                    width: "70px",
-                    height: "20px",
-                    borderRadius: "20px",
-                    color: "grey",
-                    borderColor: "grey",
-                    marginLeft:"265px"
-                  }}
-                >
-                  verified
-                </button> */}
+
 
             <Prof imageSrc="https://static.vecteezy.com/system/resources/previews/008/306/791/non_2x/square-with-round-corner-glyph-black-icon-vector.jpg"
   name="Om rajpal"
@@ -63,6 +47,7 @@ function ProfilePage({ value, color, userId }) {
   FontSize2="15px"
   marginTop="15px"
   marginBottom="6px"
+  display="1"
   />
    
 
@@ -168,7 +153,7 @@ function ProfilePage({ value, color, userId }) {
                   </li>
                 </ul>
 
-                <a href="/" className="text-primary">
+                <a href="/" className="text-primary" style={{color:"black"}}>
                   View All
                 </a>
               </div>
@@ -226,7 +211,7 @@ function ProfilePage({ value, color, userId }) {
               <hr style={{ marginTop: "25px", fontWeight: "600" }}></hr>
               <p
                 style={{ textAlign: "center", marginTop: "15px" }}
-                className="text-muted"
+                className="text-muted ml-5 pl-5"
               >
                 Best Interviewer for
               </p>
@@ -235,7 +220,7 @@ function ProfilePage({ value, color, userId }) {
                   textAlign: "center",
                   fontSize: "20px",
                   fontWeight: "500",
-                }}
+                }} className="ml-5 pl-5"
               >
                 Flutter Developer
               </h1>

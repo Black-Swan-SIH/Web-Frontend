@@ -1,7 +1,7 @@
 import React from "react";
 import "./Prof.css";
 import Heading from "./Heading";
-
+import Button from "./Button";
 const Prof = ({
   imageSrc,
   name,
@@ -18,7 +18,8 @@ const Prof = ({
   FontSize1,
   FontSize2,
   marginTop,
-  marginBottom
+  marginBottom,
+  display
 }) => {
   return (
     <div className="flex" style={{ gap: gap}}>
@@ -29,21 +30,30 @@ const Prof = ({
         <img src={imageSrc} alt="profile" className="pimage" />
       </div>
       <div style={{marginTop:marginTop}}>
-            
-   <button className="mt-5" 
-   style={{
-    marginRight:"-10px",
-    border: "1px solid black",
-    backgroundColor: "white",
-    marginTop: "15px",
-    width: "70px",
-    height: "20px",
-    borderRadius: "20px",
-    color: "grey",
-    borderColor: "grey",
-    // marginLeft:"265px"
-  }}
-   >verified</button>
+
+
+    {display ? (
+          <Button
+            marginRight="-10px"
+            border="1px solid black"
+            backgroundColor="white"
+            marginTop="15px"
+            width="70px"
+            height="20px"
+            borderRadius="20px"
+            color="grey"
+            borderColor="grey"
+            children="Verified"
+          />
+        ) : (
+          <Button
+       
+            backgroundColor="white"
+           
+          />
+        )}
+
+
         
         <Heading fontSize={nameFontSize} fontWeight="600" color={nameColor} >
           {name}
@@ -116,21 +126,25 @@ const Prof = ({
             </Heading>
           </div>
         </div>
-        <button
-                  className="mt-5"
-                  style={{
-                    color: "white",
-                    backgroundColor: "black",
-                    marginBottom: "15px",
-                    width: "120px",
-                    height: "30px",
-                    borderRadius: "10px",
-                   
-                    marginTop:"15px"
-                  }}
-                >
-                  Edit Profile
-                </button>
+        {display ? (
+                <Button
+                 color="white"
+                 bgcolor="black"
+                 marginBottom="15px"
+                 width="120px"
+                 height="30px"
+                 borderRadius="10px"
+                  children="Edit Profile"
+                 marginTop="15px"
+                 fontSize="13px"
+                />
+              ) : (
+                <Button
+             
+                  backgroundColor="white"
+                 
+                />
+              )}
       </div>
     </div>
   );

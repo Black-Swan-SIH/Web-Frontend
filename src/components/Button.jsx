@@ -1,11 +1,14 @@
 import React from "react";
 import "./Button.css";
+import { border, height } from "@mui/system";
 
-const Button = ({ width, bgcolor, color, children, borderRadius, borderColor, padding, fontWeight, fontSize, icon, hoverBorder }) => {
+const Button = ({ width, bgcolor, color, children, borderRadius, borderColor, padding, fontWeight, fontSize, icon, hoverBorder, marginRight, border, marginTop,  height }) => {
   return (
     <button
       className={`bt ${hoverBorder ? 'hover-border' : ''}`}
       style={{
+        marginRight: marginRight,
+        border: border,
         backgroundColor: bgcolor,
         color: color,
         borderRadius: borderRadius,
@@ -13,6 +16,10 @@ const Button = ({ width, bgcolor, color, children, borderRadius, borderColor, pa
         padding: padding,
         fontWeight: fontWeight,
         fontSize: fontSize,
+        marginTop: marginTop,
+        width: width,
+        height: height,
+        
       }}
     >
       {children}
