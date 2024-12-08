@@ -27,31 +27,29 @@ function ProfilePage({ value, color, userId }) {
       >
         {/* Header Section */}
         <div className="container mt-5 pt-5" style={{ marginLeft: "30px" }}>
-          <div className="container row mt-5 pt-5 " style={{ marginTop: "90px" }}>
-       
-
-
-            <Prof imageSrc="https://static.vecteezy.com/system/resources/previews/008/306/791/non_2x/square-with-round-corner-glyph-black-icon-vector.jpg"
-  name="Om rajpal"
-  unit="1st Reconnaissance Squadron"
-  age="19"
-  pronoun="He / Him"
-  experience="Beginner"
-  height="250px"
-  width="250px"
-  gap="50px"
-  borderRadius="20px"
-  nameFontSize="50px"
-  nameColor="black"
-  FontSize1="13px"
-  FontSize2="15px"
-  marginTop="15px"
-  marginBottom="6px"
-  display="1"
-  />
-   
-
-           
+          <div
+            className="container row mt-5 pt-5 "
+            style={{ marginTop: "90px" }}
+          >
+            <Prof
+              imageSrc="https://static.vecteezy.com/system/resources/previews/008/306/791/non_2x/square-with-round-corner-glyph-black-icon-vector.jpg"
+              name="Om rajpal"
+              unit="1st Reconnaissance Squadron"
+              age="19"
+              pronoun="He / Him"
+              experience="Beginner"
+              height="250px"
+              width="250px"
+              gap="50px"
+              borderRadius="20px"
+              nameFontSize="50px"
+              nameColor="black"
+              FontSize1="13px"
+              FontSize2="15px"
+              marginTop="15px"
+              marginBottom="6px"
+              display="1"
+            />
           </div>
         </div>
 
@@ -153,7 +151,7 @@ function ProfilePage({ value, color, userId }) {
                   </li>
                 </ul>
 
-                <a href="/" className="text-primary" style={{color:"black"}}>
+                <a href="/" className="text-primary" style={{ color: "black" }}>
                   View All
                 </a>
               </div>
@@ -220,7 +218,8 @@ function ProfilePage({ value, color, userId }) {
                   textAlign: "center",
                   fontSize: "20px",
                   fontWeight: "500",
-                }} className="ml-5 pl-5"
+                }}
+                className="ml-5 pl-5"
               >
                 Flutter Developer
               </h1>
