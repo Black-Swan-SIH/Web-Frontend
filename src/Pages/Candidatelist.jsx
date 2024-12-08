@@ -9,6 +9,7 @@ import formatNumber from "../components/FormatNumber.jsx";
 import Boxes from "../components/Boxes.jsx";
 import { handleFocus } from "../components/Functions.jsx";
 import Panel from "../components/Panel.jsx";
+import data2 from "../Data2.jsx";
 
 const Candidatelist = ({ head,page }) => {
   const currentYear = new Date().getFullYear();
@@ -21,24 +22,6 @@ const Candidatelist = ({ head,page }) => {
   const femaleCount = data.filter((user) => user.gender === "Female").length;
   const searchInputRef = useRef(null);
 
-  const currentPage = () => {
-    if (page === "Userlist") {
-      return sortedData.map((person) => (
-        <Userlist
-          key={person.id}
-          imageSrc={node}
-          name={person.first_name}
-          age={currentYear - person.age}
-          work={person.work}
-          value={person.progress}
-        />
-      ));
-    }
-    else if(page === "Panel"){
-      return <Panel/>
-    }
-    return null;
-  };
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -94,6 +77,38 @@ const Candidatelist = ({ head,page }) => {
     }
     return 0;
   });
+
+  const currentPage = () => {
+    if (page === "Userlist") {
+      return sortedData.map((person) => (
+        <Userlist
+          key={person.id}
+          imageSrc={node}
+          name={person.first_name}
+          age={currentYear - person.age}
+          work={person.work}
+          value={person.progress}
+        />
+      ));
+    }
+    else if(page === "Panel"){
+      return data2.map((person) => (
+        <Panel
+          key={person.id}
+          imageSrc={node}
+          name={person.name}
+          unit={person.unit}
+          age={person.age}
+          pronoun={person.pronoun}
+          experience={person.experience}
+          profileScore={person.profileScore}
+          reviews={person.reviews}
+          interview={person.interview}
+        />
+      ));
+    }
+    return null;
+  };
   return (
     <div className="cont">
       <div className="head">
@@ -118,7 +133,7 @@ const Candidatelist = ({ head,page }) => {
       />
       <div className="my-[40px] w-[60%] h-[0.8px] bg-gray-400"></div>
       <div className="scrollable-container">
-        <div className="person-list">
+        <div className={(page === "Userlist") ? "person-list" : "panel-list"}>
           {currentPage()}
         </div>
       </div>
