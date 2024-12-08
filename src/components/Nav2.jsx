@@ -20,30 +20,82 @@ function NavBar2() {
     <header className="header">
       <b>RAC, DRDO</b>
       <div className="flex gap-3">
-      <Button fontSize="16px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="12px">Dashboard</Button>
-      <Button fontSize="16px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="12px">About</Button>
-      <Button fontSize="16px" bgcolor="transparent" color="var(--text-color1)" fontWeight="600" hoverBorder={true} padding="0.3em 7px" borderRadius="12px">Contact</Button>
+        <Button
+          fontSize="16px"
+          bgcolor="transparent"
+          color="var(--text-color1)"
+          fontWeight="600"
+          hoverBorder={true}
+          padding="0.3em 7px"
+          borderRadius="12px"
+          width={"110px"}
+        >
+          Dashboard
+        </Button>
+        <Button
+          fontSize="16px"
+          bgcolor="transparent"
+          color="var(--text-color1)"
+          fontWeight="600"
+          hoverBorder={true}
+          padding="0.3em 7px"
+          borderRadius="12px"
+          width={"110px"}
+        >
+          About
+        </Button>
+        <Button
+          fontSize="16px"
+          bgcolor="transparent"
+          color="var(--text-color1)"
+          fontWeight="600"
+          hoverBorder={true}
+          padding="0.3em 7px"
+          borderRadius="12px"
+          width={"110px"}
+        >
+          Contact
+        </Button>
       </div>
       <div className="nav">
-        <img src={proicon} alt="Profile Icon" style={{borderRadius: "20%", width: "18px", height: "18px"}} />
-        <div style={
-          {
-            width: "2px"
-          }
-        }></div>
-        <img src={addition} alt="Addition Icon" style={{borderRadius: "25%", width: "20px", height: "20px"}} />
-        <Button bgcolor="transparent" color="var(--text-color10)" fontWeight="600" fontSize="14px">हिन्दी</Button>
+        <img
+          src={proicon}
+          alt="Profile Icon"
+          style={{ borderRadius: "20%", width: "18px", height: "18px" }}
+        />
+        <div
+          style={{
+            width: "2px",
+          }}
+        ></div>
+        <img
+          src={addition}
+          alt="Addition Icon"
+          style={{ borderRadius: "25%", width: "20px", height: "20px" }}
+        />
+        <Button
+          bgcolor="transparent"
+          color="var(--text-color10)"
+          fontWeight="600"
+          fontSize="14px"
+        >
+          हिन्दी
+        </Button>
         <div className="flex gap-2 items-center justify-center">
-          <div className={`sun ${darkMode ? 'dark' : 'light'}`}>
+          <div className={`sun ${darkMode ? "dark" : "light"}`}>
             <i class="fa-solid fa-sun"></i>
           </div>
           <div>
             <label class="switch">
-              <input type="checkbox" checked={darkMode} onChange={toggleTheme} />
+              <input
+                type="checkbox"
+                checked={darkMode}
+                onChange={toggleTheme}
+              />
               <span class="slider round"></span>
             </label>
           </div>
-          <div className={`moon ${darkMode ? 'dark' : 'light'}`}>
+          <div className={`moon ${darkMode ? "dark" : "light"}`}>
             <i class="fa-solid fa-moon"></i>
           </div>
         </div>

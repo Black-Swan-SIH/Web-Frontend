@@ -6,6 +6,7 @@ const Button = ({ width, bgcolor, color, children, borderRadius, borderColor, pa
     <button
       className={`bt ${hoverBorder ? 'hover-border' : ''}`}
       style={{
+        width: width,
         backgroundColor: bgcolor,
         color: color,
         borderRadius: borderRadius,
