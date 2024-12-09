@@ -16,6 +16,7 @@ const Button = ({
   icon,
   hoverBorder,
   marginRight,
+  marginBottom,
   border,
   marginTop,
   height,
@@ -38,6 +39,7 @@ const Button = ({
         marginTop: marginTop,
         width: width,
         height: height,
+        marginBottom:marginBottom
       }}
     >
       {children}
