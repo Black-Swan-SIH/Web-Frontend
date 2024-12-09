@@ -2,7 +2,7 @@ import React from "react";
 import "./Joblist.css";
 import Heading from "./Heading";
 
-const Joblist = ({ imageSrc, jobs, application, open,backgColor }) => {
+const Joblist = ({ imageSrc, jobs, applications, open,backgColor }) => {
   return (
     <div className="ccontainer" style={{backgroundColor:backgColor}}>
       <div className="image-ccontainer">
@@ -13,7 +13,7 @@ const Joblist = ({ imageSrc, jobs, application, open,backgColor }) => {
           {jobs}
         </Heading>
         <Heading fontSize="11px" fontWeight="500" color="var(--text-color8)" className="application">
-          {application}
+          Applications: {applications}
         </Heading>
         <Heading fontSize="8px" fontWeight="500" color="var(--text-color11)"className="open">
           {open}
