@@ -3,8 +3,13 @@ import play from "../assets/play.png";
 import Lottie from "lottie-react";
 import home from "../assets/home.json";
 import at from "../assets/at.png";
+import Button from "../components/Button";
 
 const Main = () => {
+
+  const handleGetStartedClick = () => {
+    alert("Get Started button clicked!");
+  };
   return (
     <div id="main">
       <div id="content">
@@ -14,9 +19,10 @@ const Main = () => {
           <i className="italics">precision</i> and{" "}
           <i className="italics">insight</i>
         </h2>
-        <div id="button">
-          <img src={play} alt="" width={"22px"} />
-          <h1>Get Started</h1>
+        <div id="button" onClick={handleGetStartedClick}>
+          {/* <img src={play} alt="" width={"22px"} />
+          <h1>Get Started</h1> */}
+          <Button onClick={handleGetStartedClick}>start</Button>
         </div>
         <div id="sideborders"></div>
         <div id="topborders"></div>
