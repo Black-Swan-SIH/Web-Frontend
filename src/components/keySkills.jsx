@@ -1,6 +1,7 @@
+import { borderRadius, fontSize, minWidth, padding } from '@mui/system';
 import React, { useState } from 'react';
 
-const ExpandableDiv = ({name,content}) => {
+const ExpandableDiv = ({name,content,borderRadius,padding,paddingLeft,position,cursor,width,minWidth,fontSize,backgroundColor,fontSize1}) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -8,20 +9,18 @@ const ExpandableDiv = ({name,content}) => {
   };
 
   return (
-   
-
     <div
     style={{
-      borderRadius: "8px",
-      padding: "16px",
-      paddingLeft:"10px",
-      position: "relative", // For positioning the + sign
+      borderRadius: borderRadius,
+      padding: padding,
+      paddingLeft: paddingLeft,
+      position: position,
       
-      cursor: "pointer",
-      width: isExpanded ? "fit-content" : "700px", // Wider when collapsed
-      minWidth: "700px", // Ensures the div remains wide
+      cursor: cursor,
+      width: isExpanded ? "fit-content" : width, // Wider when collapsed
+      minWidth: minWidth, // Ensures the div remains wide
       transition: "all 0.3s ease-in-out",
-      ...(isExpanded && { backgroundColor: 'lightgrey', })
+      ...(isExpanded && { backgroundColor: backgroundColor })
     }}
     onClick={toggleExpand}
   >
@@ -29,7 +28,7 @@ const ExpandableDiv = ({name,content}) => {
     <div
     className='text-muted'
       style={{ fontWeight:"600",
-        fontSize: "25px",
+        fontSize: fontSize,
       }}
     >
       {/* Core Development */}
@@ -58,7 +57,7 @@ const ExpandableDiv = ({name,content}) => {
       <div
         style={{
           marginTop: "16px",
-          fontSize: "16px",
+          fontSize1: fontSize1,
         }}
       >
          {/* expanded content  */}

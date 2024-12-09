@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,useLocation } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/nav";
 import NavBar2 from "./components/Nav2";
@@ -14,12 +14,13 @@ import ProgressBar from "./components/progressBar";
 import Dashboard from "./Pages/Dashboard";
 import Userlist from "./components/Userlist";
 import Main from "./Pages/Main";
+import CandidateHome from "./Pages/CandidateHome";
 // import Joblist from "./components/Joblist";
 // import node from "./assets/node.jpg";
-
+import Navbar3 from "./components/Navbar3";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-
+  
   return (
     <Router>
        {isLoggedIn ? <NavBar2 /> : <NavBar />}
@@ -37,6 +38,8 @@ function App() {
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/main" element={<Main/>}/>
+        
+        <Route path="/candidateHome" element={<CandidateHome/>}/>
         {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
       </Routes>
     </Router>
