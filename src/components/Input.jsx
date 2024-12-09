@@ -2,25 +2,29 @@ import React from "react";
 import "./Input.css";
 
 const Input = ({
+  type = "text", // Default type
   children,
   name,
   value,
   onChange,
-  color,
-  background,
-  borderRadius,
-  boxShadow,
+  color = "#000", // Default color
+  background = "#fff", // Default background
+  borderRadius = "4px", // Default border-radius
+  boxShadow = "0px 2px 4px rgba(0, 0, 0, 0.1)", // Default box-shadow
   placeholderColor,
 }) => {
   const placeholderClass = placeholderColor ? `placeholder-${placeholderColor}` : "";
 
   return (
     <div className="form-group">
+      <label className="label" htmlFor={name}>
+        {children}
+      </label>
       <input
-        type={name}
+        id={name}
+        type={type}
         name={name}
         value={value}
-        placeholder={children}
         onChange={onChange}
         style={{
           color: color,
@@ -28,7 +32,7 @@ const Input = ({
           borderRadius: borderRadius,
           boxShadow: boxShadow,
         }}
-        className={placeholderClass}
+        className={`input ${placeholderClass}`}
         required
       />
     </div>

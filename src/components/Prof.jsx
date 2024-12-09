@@ -62,7 +62,7 @@ const Prof = ({
           <div className="flex  gap-3">
             <Heading
               fontSize={FontSize1}
-              fontWeight="600"
+              fontWeight="500"
               color="var(--text-color23)"
             >
               Unit:
@@ -78,7 +78,7 @@ const Prof = ({
           <div className="flex gap-3">
             <Heading
               fontSize={FontSize1}
-              fontWeight="600"
+              fontWeight="500"
               color="var(--text-color23)"
             >
               Age:
@@ -96,7 +96,7 @@ const Prof = ({
           <div className="flex  gap-3">
             <Heading
               fontSize={FontSize1}
-              fontWeight="600"
+              fontWeight="500"
               color="var(--text-color23)"
             >
               Pronouns:
@@ -109,10 +109,10 @@ const Prof = ({
               {pronoun}
             </Heading>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-start align-bottom">
             <Heading
               fontSize={FontSize1}
-              fontWeight="600"
+              fontWeight="500"
               color="var(--text-color23)"
             >
               Experience:

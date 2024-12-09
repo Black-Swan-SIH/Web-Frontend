@@ -3,6 +3,7 @@ import "./Button.css";
 import { border, height } from "@mui/system";
 
 const Button = ({
+  onClick,
   width,
   bgcolor,
   color,
@@ -23,6 +24,7 @@ const Button = ({
   return (
     <button
     type="submit"
+    onClick={onClick}
       className={`bt ${hoverBorder ? "hover-border" : ""}`}
       style={{
         marginRight: marginRight,

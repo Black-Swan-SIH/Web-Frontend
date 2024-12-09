@@ -8,14 +8,17 @@ import Profile from "./components/profile";
 import { green } from "@mui/material/colors";
 import Experts from "./Pages/Experts";
 import Job from "./components/Job";
-import Itemcount from "./components/Itemcount";
 import Candidatelist from "./Pages/Candidatelist";
 import ProgressBar from "./components/progressBar";
 import Dashboard from "./Pages/Dashboard";
-import Userlist from "./components/Userlist";
 import Main from "./Pages/Main";
+<<<<<<< HEAD
 import CandidateHome from "./Pages/CandidateHome";
 // import Joblist from "./components/Joblist";
+=======
+import JobList from "./Pages/JobList";
+import StepperForm from "./components/Stepperform";
+>>>>>>> 5ed517085d0f1893d86e3a3e5db73ddd799a0760
 // import node from "./assets/node.jpg";
 import Navbar3 from "./components/Navbar3";
 function App() {
@@ -25,12 +28,12 @@ function App() {
     <Router>
        {isLoggedIn ? <NavBar2 /> : <NavBar />}
       <Routes>
-      <Route path="/expert/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.mlsc.tech/expert/signin">Sign In</Sign>} />
+        <Route path="/expert/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.mlsc.tech/expert/signin">Sign In</Sign>} />
         <Route path="/candidate/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.mlsc.tech/candidate/signin">Sign In</Sign>} />
+        <Route path="/admin/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.mlsc.tech/admin/signin">Sign In</Sign>} />
         <Route path="/profile" element={<Profile value={80} color="green" userId={1}/>} />
         <Route path="/experts" element={<Experts />} />
-        <Route path="/job" element={<Job />} />
-        <Route path="/itemcount" element={<Itemcount head="Total Experts" value="11.26K"/>} />     
+        <Route path="/job" element={<Job />} /> 
         <Route path="/candidatelist" element={<Candidatelist head="Candidates" page="Userlist"/>}/>
         <Route path="/expertlist" element={<Candidatelist head="Candidates" page="Userlist"/>}/>
         <Route path="/panel" element={<Candidatelist head="Select your panel" page="Panel"/>}/>
@@ -38,10 +41,16 @@ function App() {
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/main" element={<Main/>}/>
+<<<<<<< HEAD
         
         <Route path="/candidateHome" element={<CandidateHome/>}/>
         {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
       </Routes>
+=======
+        <Route path="/joblist" element={<JobList head="Jobs" page="Userlist"/>}/>
+        <Route path="/stepperform" element={<StepperForm/>}/>
+        </Routes>
+>>>>>>> 5ed517085d0f1893d86e3a3e5db73ddd799a0760
     </Router>
   );
 }

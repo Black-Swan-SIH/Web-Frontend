@@ -1,5 +1,6 @@
 import React from 'react';
 import LinearProgress from '@mui/joy/LinearProgress';
+import { height } from '@mui/system';
 
 
 function TopSkills({value,skill}) {
@@ -35,7 +36,8 @@ function TopSkills({value,skill}) {
             value={value}
             style={{
               width: "200px",
-                 color:"black"
+                 color:"black",
+              background: "#A8A8A8"
             
             }}
           />
