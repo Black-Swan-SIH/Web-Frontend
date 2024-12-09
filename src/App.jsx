@@ -14,7 +14,11 @@ import Dashboard from "./Pages/Dashboard";
 import Main from "./Pages/Main";
 import CandidateHome from "./Pages/CandidateHome";
 import Joblist from "./components/Joblist";
+
 import JobCandidate from "./Pages/JobCandidate";
+
+
+
 // import Joblist from "./components/Joblist";
 import JobList from "./Pages/JobList";
 import StepperForm from "./components/Stepperform";

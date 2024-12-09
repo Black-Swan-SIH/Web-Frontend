@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Heading from "../components/Heading";
 import "./Dashboard.css";
 import CandidateCount from "../components/CandidateCount";
@@ -9,6 +9,7 @@ import Button from "../components/Button";
 import { FaGreaterThan } from "react-icons/fa";
 import Joblist from "../components/Joblist";
 import axios from "axios";
+import TimeDifference from "../TimeDifference";
 
 const Dashboard = () => {
   const [total, setTotal] = useState(0);
@@ -18,7 +19,6 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       const userToken = localStorage.getItem("userToken");
-      console.log(userToken)
       try {
         const response1 = await axios.get("https://api.mlsc.tech/candidate", {
           headers: {
@@ -27,25 +27,32 @@ const Dashboard = () => {
           withCredentials: true, // Include credentials if needed
         });
 
-        const response2 = await axios.get("https://api.mlsc.tech/candidate", {
+        const response2 = await axios.get("https://api.mlsc.tech/expert", {
           headers: {
             Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
           },
           withCredentials: true, // Include credentials if needed
         });
 
-        const response3 = await axios.get("https://api.mlsc.tech/candidate", {
+        const response3 = await axios.get("https://api.mlsc.tech/subject", {
           headers: {
             Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
           },
           withCredentials: true, // Include credentials if needed
         });
 
-        const data = response1.data;
-        console.log(data);
-        setTotal(data.data.candidates.length);
-        // setExperts(data.experts);
-        // setJobs(data.jobs);
+        const data1 = response1.data;
+        // console.log(data1);
+        setTotal(data1.data.candidates.length);
+
+        const data2 = response2.data;
+        // console.log(data2);
+        setExperts(data2.data.experts);
+
+        const data3 = response3.data;
+        console.log(data3.data.subjects[0]);
+        setJobs(data3.data.subjects);
+        
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -53,20 +60,20 @@ const Dashboard = () => {
     fetchData();
   }, []);
 
-  // const displayedExperts = experts.slice(0, 3);
-  // const displayedJobs = jobs.slice(0, 2);
+  const displayedExperts = useMemo(() => experts.slice(0, 3), [experts]);
+  const displayedJobs = useMemo(() => (Array.isArray(jobs) ? jobs.slice(0, 2) : []), [jobs]);
 
   return (
     <div className="dash">
-      {/* <div className="dashboard">
+      <div className="dashboard">
         <div className="first-column">
           <Heading fontSize="40px" fontWeight="600" color="var(--text-color9)">
             Dashboard
           </Heading>
           <div className="items">
             <CandidateCount head="Candidates" value={formatNumber(total)} />
-            <CandidateCount head="Experts" value={formatNumber(total)} />
-            <CandidateCount head="Job Openings" value={formatNumber(total)} />
+            <CandidateCount head="Experts" value={formatNumber(experts.length)} />
+            <CandidateCount head="Job Openings" value={formatNumber(jobs.length)} />
           </div>
           <div className="mt-[25px] mb-[20px]">
             <Heading
@@ -82,10 +89,10 @@ const Dashboard = () => {
               {displayedExperts.map((expert, index) => (
                 <TopExperts
                   key={index}
-                  imageSrc={expert.imageSrc || node}
+                  imageSrc={expert.imageSrc ? expert.imageSrc : node}
                   name={expert.name}
-                  expert={expert.expert}
-                  score={expert.score}
+                  expert={expert.currentPosition}
+                  score={(expert.averageProfileScore*10)}
                 />
               ))}
               {experts.length > 3 && (
@@ -139,11 +146,11 @@ const Dashboard = () => {
             {displayedJobs.map((job, index) => (
               <Joblist
                 key={index}
-                imageSrc={job.imageSrc}
-                backgColor={job.backgColor}
-                jobs={job.jobs}
-                application={job.application}
-                open={job.open}
+                imageSrc={job.imageSrc ? job.imageSrc : node}
+                backgColor="rgba(142, 183, 168, 1)"
+                jobs={job.title}
+                applications={job.applications.length}
+                open={<TimeDifference timestamp={job.createdAt} />}
               />
             ))}
             {jobs.length > 2 && (
@@ -205,7 +212,7 @@ const Dashboard = () => {
             View all job openings
           </Button>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
