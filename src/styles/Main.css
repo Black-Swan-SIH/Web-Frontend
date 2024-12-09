@@ -3,7 +3,7 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
-    z-index: -3;
+    z-index: 0;
     background-color: white;
 }
 
@@ -15,8 +15,9 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; 
     position: relative;
+    z-index: 10;
 }
 
 #head{
@@ -62,9 +63,11 @@
     display: flex;
     border-radius: 12px;
     align-items: center;
+    cursor: pointer;
+    position: relative;
     margin-top: 20px;
+    z-index: 100;
     justify-content: space-evenly;
-    z-index: 10;
 }
 
 #button h1{

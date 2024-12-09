@@ -6,7 +6,6 @@ import at from "../assets/at.png";
 import Button from "../components/Button";
 
 const Main = () => {
-
   const handleGetStartedClick = () => {
     alert("Get Started button clicked!");
   };
@@ -19,11 +18,10 @@ const Main = () => {
           <i className="italics">precision</i> and{" "}
           <i className="italics">insight</i>
         </h2>
-        <div id="button" onClick={handleGetStartedClick}>
-          {/* <img src={play} alt="" width={"22px"} />
-          <h1>Get Started</h1> */}
-          <Button onClick={handleGetStartedClick}>start</Button>
-        </div>
+        <button id="button" onClick={handleGetStartedClick}>
+          <img src={play} alt="" width={"22px"} />
+          <h1>Get Started</h1>
+        </button>
         <div id="sideborders"></div>
         <div id="topborders"></div>
         <div id="lottie">
