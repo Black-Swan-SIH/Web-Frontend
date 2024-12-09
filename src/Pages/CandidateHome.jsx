@@ -47,11 +47,11 @@ function CandidateHome() {
   <hr style={{
     transform: "rotate(90deg)",
     marginLeft: "510px",
-    width: "150px", // Adjust the length of the line
-    border: "none", // Remove default border
-    backgroundColor: "grey", // Set the desired color
+    width: "150px",
+    border: "none", 
+    backgroundColor: "grey",
     height: "1px", 
-    marginTop:"-65px"// Adjust the thickness
+    marginTop:"-65px"
   }} ></hr>
 
                 </div>

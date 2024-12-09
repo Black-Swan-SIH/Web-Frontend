@@ -12,6 +12,9 @@ import Candidatelist from "./Pages/Candidatelist";
 import ProgressBar from "./components/progressBar";
 import Dashboard from "./Pages/Dashboard";
 import Main from "./Pages/Main";
+import CandidateHome from "./Pages/CandidateHome";
+import Joblist from "./components/Joblist";
+
 <<<<<<< HEAD
 import CandidateHome from "./Pages/CandidateHome";
 // import Joblist from "./components/Joblist";
