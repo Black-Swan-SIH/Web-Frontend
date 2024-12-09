@@ -13,6 +13,7 @@ import ProgressBar from "./components/progressBar";
 import Dashboard from "./Pages/Dashboard";
 import Main from "./Pages/Main";
 import JobList from "./Pages/JobList";
+import StepperForm from "./components/Stepperform";
 // import node from "./assets/node.jpg";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/main" element={<Main/>}/>
         <Route path="/joblist" element={<JobList head="Jobs" page="Userlist"/>}/>
+        <Route path="/stepperform" element={<StepperForm/>}/>
         </Routes>
     </Router>
   );

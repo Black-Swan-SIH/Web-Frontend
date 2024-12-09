@@ -29,7 +29,14 @@ export default function Sign({ but, a, text, children, apiUrl }) {
         },
         { withCredentials: true }
       );
-      // console.log("Response from backend:", response.data);
+      console.log("Response from backend:", response.data);
+      const token = response.data.data.userToken; // Adjust this based on the API response structure
+      if (token) {
+        localStorage.setItem("userToken", token);
+        console.log("Token stored in local storage:", token);
+      } else {
+        console.warn("No token received in the response.");
+      }
       // console.log("Response from backend:", response.status);
       // console.log("Response from backend:", response.data.data.role);
       if (response.data.data.role === "candidate") {
@@ -56,7 +63,11 @@ export default function Sign({ but, a, text, children, apiUrl }) {
         <h2>{children}</h2>
         <form onSubmit={handleSubmit} action="#">
           <Heading fontSize="18px">username</Heading>
-          <Input name="username" value={formData.username} onChange={handleChange}>
+          <Input
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+          >
             abc@gmail.com
           </Input>
           <Heading fontSize="18px">Password</Heading>
