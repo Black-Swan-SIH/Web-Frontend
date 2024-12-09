@@ -14,9 +14,7 @@ import Dashboard from "./Pages/Dashboard";
 import Main from "./Pages/Main";
 import CandidateHome from "./Pages/CandidateHome";
 import Joblist from "./components/Joblist";
-
-
-import CandidateHome from "./Pages/CandidateHome";
+import JobCandidate from "./Pages/JobCandidate";
 // import Joblist from "./components/Joblist";
 import JobList from "./Pages/JobList";
 import StepperForm from "./components/Stepperform";
@@ -45,6 +43,7 @@ function App() {
         <Route path="/main" element={<Main/>}/>
         
         <Route path="/candidateHome" element={<CandidateHome/>}/>
+        <Route path="/jobcandidate" element={<JobCandidate/>}/>
         <Route path="/joblist" element={<JobList head="Jobs" page="Userlist"/>}/>
         <Route path="/stepperform" element={<StepperForm/>}/>
         {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}

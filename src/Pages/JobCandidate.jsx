@@ -1,7 +1,7 @@
 import React from 'react';
-import ExpandableDiv from './keySkills';
+import ExpandableDiv from '../components/keySkills';
 import { useNavigate } from 'react-router-dom';
-
+import Navbar3 from '../components/Navbar3';
 function Job() {
     const renderCircles = (count) => {
         return [...Array(count)].map((_, index) => (
@@ -34,12 +34,12 @@ function Job() {
  
     return ( 
       <>
-        
-<div className=" container mt-5 pt-5 pl-5">
-    <div className="container ml-5 mt-5 pt-5 pl-5">
-        <div className="container ml-5 mt-5 pt-5 pl-5">
-            <div className="container ml-5 pl-5 mt-5 pt-5">
-                <div className="container ml-5 pl-5 mt-5 pt-5">
+<Navbar3/>      
+<div className=" container pl-5">
+    <div className="container ml-5 pl-5">
+        <div className="container ml-5 pl-5">
+            <div className="container ml-5 pl-5">
+                <div className="container ml-5 pl-5">
                     <div className="row ml-5 pl-5 mt-5 pt-5">
        
                         <div className="col-lg-8 col-md-12 mt-5 pt-5">
@@ -61,44 +61,47 @@ function Job() {
                             <div>
                                 <ul>
                                     <li> <ExpandableDiv name="Core development" content="content" 
-                                      borderRadius="8px"
-                                      padding="16px"
-                                      paddingLeft="10px"
-                                      position="relative"
-                                      backgroundColor='lightgrey'
-                                      cursor="pointer"
-                                    width="700px" 
-                                      minWidth="700px"
-                                      fontSize="25px"
-                                      fontSize1="16px"
+                                     borderRadius="8px"
+                                     padding="16px"
+                                     paddingLeft="10px"
+                                     position="relative"
+                                     fontSize="25px"
+                                     cursor="pointer"
+                                   width="700px" 
+                                     minWidth="700px"
+                                     backgroundColor="#9CAFB7"
                                     /></li>
-                                    <li> <ExpandableDiv name="Database Management" content="content"
-                                    borderRadius="8px"
-                                    padding="16px"
-                                    paddingLeft="10px"
-                                    position="relative"
-                                    backgroundColor='lightgrey'
-                                    cursor="pointer"
-                                  width="700px" 
-                                    minWidth="700px"
-                                    fontSize="25px"
-                                    fontSize1="16px"
+                                    <li> <ExpandableDiv name="Database Management" content="content" 
+                                     borderRadius="8px"
+                                     padding="16px"
+                                     paddingLeft="10px"
+                                     position="relative"
+                                     fontSize="25px"
+                                     cursor="pointer"
+                                   width="700px" 
+                                     minWidth="700px"
+                                     backgroundColor="#9CAFB7"
                                     /></li>
                                 </ul>
                             </div>
         
-                             <button className="btn mt-5 pt-5" style={{backgroundColor:'black', color:'white'}}>Edit Job Details</button>
+                             <button className="btn mt-5 pl-5" style={{backgroundColor:'black', color:'white',width:"80px",height:"30px",borderRadius:"8px"}}>Apply</button>
                         </div>
 
        
      
-                        <div className="col-lg-4 col-md-12 mt-5 pt-5" onClick={handleClick}>
+                        <div className="col-lg-4 col-md-12 mt-5 pt-5" 
+                        style={{marginTop:"50px"}}>
          
-                            <div className="mt-4 mt-5 pt-5 ml-5 pl-5">
-                                <h4 className="m-3" style={{fontSize:"25px" , fontWeight: 700}}>Experts</h4>
-                                <div style={{display: 'flex', flexWrap: 'wrap', gap: '8px',maxWidth: '90%', }}>
-                                {renderCircles(15)} 
-                                </div>
+                            <div className="mt-4 mt-5 pt-5 ml-5 pl-5" >
+                               <ul>
+                                <li>Last updated on: <strong>29 Oct,2024 18:46 hrs</strong></li>
+                                <li>Work Mode: <strong>Remote</strong></li>
+                                <li>Location Type: <strong>Hybrid</strong></li>
+                                <li>Location: <strong>Bengaluru, karnataka</strong></li>
+                                <li>Department: <strong>Ministry of Defense</strong></li>
+                                <li>Type: <strong>Internship</strong></li>
+                               </ul>
                             </div>
 
       
