@@ -16,7 +16,6 @@ import CandidateHome from "./Pages/CandidateHome";
 import Joblist from "./components/Joblist";
 
 
-import CandidateHome from "./Pages/CandidateHome";
 // import Joblist from "./components/Joblist";
 import JobList from "./Pages/JobList";
 import StepperForm from "./components/Stepperform";
