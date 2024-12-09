@@ -34,12 +34,12 @@
     margin-top: 10px;
     margin-bottom: 1rem;
     text-align: center;
-    color: #a0a0a0;
+    color: #3b3b3b;
     z-index: 4;
 }
 
 #content #subhead {
-    color: #a0a0a0; /* More specific selector */
+    color: #3f3f3f; /* More specific selector */
 }
 
 .italics {
