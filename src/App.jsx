@@ -15,13 +15,12 @@ import Main from "./Pages/Main";
 import CandidateHome from "./Pages/CandidateHome";
 import Joblist from "./components/Joblist";
 
-<<<<<<< HEAD
+
 import CandidateHome from "./Pages/CandidateHome";
 // import Joblist from "./components/Joblist";
-=======
 import JobList from "./Pages/JobList";
 import StepperForm from "./components/Stepperform";
->>>>>>> 5ed517085d0f1893d86e3a3e5db73ddd799a0760
+
 // import node from "./assets/node.jpg";
 import Navbar3 from "./components/Navbar3";
 function App() {
@@ -44,17 +43,17 @@ function App() {
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/main" element={<Main/>}/>
-<<<<<<< HEAD
         
         <Route path="/candidateHome" element={<CandidateHome/>}/>
-        {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
-      </Routes>
-=======
         <Route path="/joblist" element={<JobList head="Jobs" page="Userlist"/>}/>
         <Route path="/stepperform" element={<StepperForm/>}/>
-        </Routes>
->>>>>>> 5ed517085d0f1893d86e3a3e5db73ddd799a0760
-    </Router>
+        {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
+      </Routes>
+
+        
+        
+  </Router>
+    
   );
 }
 
