@@ -60,8 +60,28 @@ function Job() {
 
                             <div>
                                 <ul>
-                                    <li> <ExpandableDiv name="Core development" content="content"/></li>
-                                    <li> <ExpandableDiv name="Database Management" content="content"/></li>
+                                    <li> <ExpandableDiv name="Core development" content="content" 
+                                     borderRadius="8px"
+                                     padding="16px"
+                                     paddingLeft="10px"
+                                     position="relative"
+                                     
+                                     cursor="pointer"
+                                   width="700px" 
+                                     minWidth="700px"
+                                    /></li>
+                                    <li> <ExpandableDiv name="Database Management" content="content"
+                                    borderRadius="8px"
+                                    padding="16px"
+                                    paddingLeft="10px"
+                                    position="relative"
+                                    backgroundColor='lightgrey'
+                                    cursor="pointer"
+                                  width="700px" 
+                                    minWidth="700px"
+                                    fontSize="25px"
+                                    fontSize1="16px"
+                                    /></li>
                                 </ul>
                             </div>
         

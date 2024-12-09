@@ -66,14 +66,12 @@ const Candidatelist = ({ head,page }) => {
     if (sortOption === "time-asc") {
       const timeA = new Date(`1970-01-01T${a.time}Z`);
       const timeB = new Date(`1970-01-01T${b.time}Z`);
-      sortedData.reverse();
-      return timeA - timeB;
+      return timeA - timeB; // Ascending order
     }
     if (sortOption === "time-desc") {
       const timeA = new Date(`1970-01-01T${a.time}Z`);
       const timeB = new Date(`1970-01-01T${b.time}Z`);
-      sortedData.reverse();
-      return timeB - timeA;
+      return timeB - timeA; // Descending order
     }
     return 0;
   });

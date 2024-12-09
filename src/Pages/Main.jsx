@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "../styles/Main.css";
 import play from "../assets/play.png";
 import Lottie from "lottie-react";
@@ -5,10 +6,46 @@ import home from "../assets/home.json";
 import at from "../assets/at.png";
 import Button from "../components/Button";
 
+const Modal = ({ onClose }) => {
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <h1>Register</h1>
+        <div id="form" style={{
+          width: "33vw",
+        }}>
+          <div style={{width: "80%"}}>
+            <h2>Username</h2>
+            <input style={{width: "100%"}} type="text" placeholder="username" />
+          </div>
+
+          <div style={{width: "80%"}}>
+            <h2>Password</h2>
+            <input style={{width: "100%"}} type="text" placeholder="Password" />
+          </div>
+        </div>
+        <br />
+        <div style={{width: "100px"}}>
+          <button style={{width: "100%"}} className="close-button" onClick={onClose}>
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Main = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleGetStartedClick = () => {
-    alert("Get Started button clicked!");
+    setIsModalOpen(true);
   };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div id="main">
       <div id="content">
@@ -38,6 +75,7 @@ const Main = () => {
           <img src={at} alt="" width={"60px"} />
         </div>
       </div>
+      {isModalOpen && <Modal onClose={closeModal} />}
     </div>
   );
 };
