@@ -45,7 +45,7 @@ function ProfilePage({ value, color, userId }) {
               nameFontSize="47px"
               nameColor="black"
               FontSize1="13px"
-              FontSize2="14px"
+              FontSize2="13px"
               marginTop="15px"
               marginBottom="6px"
               display="1"

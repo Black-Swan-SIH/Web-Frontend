@@ -14,7 +14,7 @@ const Panel = ({
   interview,
 }) => {
   return (
-    <div className="flex mb-7 justify-between items-center">
+    <div className="flex mb-12 justify-between items-center">
       <div style={{ flexBasis: "50%" }}>
         <Prof
           imageSrc={imageSrc}
@@ -30,7 +30,8 @@ const Panel = ({
           nameFontSize="28px"
           nameColor="var(--text-color9)"
           FontSize1="13px"
-          FontSize2="14px"
+          FontSize2="13px"
+          marginTop={-20}
         />
       </div>
       <div style={{ flexBasis: "30%" }}>
