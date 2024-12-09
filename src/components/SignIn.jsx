@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Sign({ but, a, text, children, apiUrl }) {
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ export default function Sign({ but, a, text, children, apiUrl }) {
       const response = await axios.post(
         apiUrl,
         {
-          email: formData.email,
+          username: formData.username,
           password: formData.password,
         },
         { withCredentials: true }
@@ -34,10 +34,10 @@ export default function Sign({ but, a, text, children, apiUrl }) {
       // console.log("Response from backend:", response.data.data.role);
       if (response.data.data.role === "candidate") {
         navigate("/candidatelist");
-      } else if (response.data.data.role === "expert") {
+      } else if (response.data.data.role === "admin") {
         navigate("/dashboard");
       }
-      setFormData({ email: "", password: "" });
+      setFormData({ username: "", password: "" });
     } catch (error) {
       console.error("Error submitting form:", error);
       if (error.response) {
@@ -55,8 +55,8 @@ export default function Sign({ but, a, text, children, apiUrl }) {
       <div className="glass-form">
         <h2>{children}</h2>
         <form onSubmit={handleSubmit} action="#">
-          <Heading fontSize="18px">Email</Heading>
-          <Input name="email" value={formData.email} onChange={handleChange}>
+          <Heading fontSize="18px">username</Heading>
+          <Input name="username" value={formData.username} onChange={handleChange}>
             abc@gmail.com
           </Input>
           <Heading fontSize="18px">Password</Heading>

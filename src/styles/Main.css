@@ -64,6 +64,7 @@
     align-items: center;
     margin-top: 20px;
     justify-content: space-evenly;
+    z-index: 10;
 }
 
 #button h1{

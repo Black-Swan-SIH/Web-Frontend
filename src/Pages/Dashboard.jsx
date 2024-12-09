@@ -1,38 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Heading from "../components/Heading";
 import "./Dashboard.css";
 import CandidateCount from "../components/CandidateCount";
-import data from "../data";
 import formatNumber from "../components/FormatNumber";
 import TopExperts from "../components/TopExperts";
 import node from "../assets/node.jpg";
 import Button from "../components/Button";
 import { FaGreaterThan } from "react-icons/fa";
 import Joblist from "../components/Joblist";
-
-const total = data.length;
-
-const experts = [
-  { imageSrc: node, name: "Om Rajpal", expert: "Flutter Developer", score: "85.5" },
-  { imageSrc: node, name: "Achin", expert: "Backend Developer", score: "82.5" },
-  { imageSrc: node, name: "Parth", expert: "Nothing", score: "99.5" },
-  { imageSrc: node, name: "John Doe", expert: "React Developer", score: "88.0" },
-  { imageSrc: node, name: "Jane Doe", expert: "Java Developer", score: "80.0" },
-];
-
-const jobs = [
-  { imageSrc: node, backgColor: "rgba(142, 183, 168, 1)", jobs: "Node.js Developer", application: "Applications: 101", open: "Opened 2 Days Ago" },
-  { imageSrc: node, backgColor: "rgba(142, 183, 168, 1)", jobs: "Typescript Developer", application: `Applications: ${formatNumber(total)}`, open: "Opened 1 Days Ago" },
-  { imageSrc: node, backgColor: "rgba(142, 183, 168, 1)", jobs: "Python Developer", application: "Applications: 75", open: "Opened 3 Days Ago" },
-];
+import axios from "axios";
 
 const Dashboard = () => {
-  const displayedExperts = experts.slice(0, 3); // Limit to 3 experts
-  const displayedJobs = jobs.slice(0, 2); // Limit to 2 job listings
+  // const [total, setTotal] = useState(0);
+  // const [experts, setExperts] = useState([]);
+  // const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("https://api.mlsc.tech/candidate", {},{
+          withCredentials: true
+        });
+        const data = response.data;
+        console.log(data);
+        // setTotal(data.total);
+        // setExperts(data.experts);
+        // setJobs(data.jobs);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  // const displayedExperts = experts.slice(0, 3);
+  // const displayedJobs = jobs.slice(0, 2);
 
   return (
     <div className="dash">
-      <div className="dashboard">
+      {/* <div className="dashboard">
         <div className="first-column">
           <Heading fontSize="40px" fontWeight="600" color="var(--text-color9)">
             Dashboard
@@ -43,7 +49,11 @@ const Dashboard = () => {
             <CandidateCount head="Job Openings" value={formatNumber(total)} />
           </div>
           <div className="mt-[25px] mb-[20px]">
-            <Heading fontSize="20px" fontWeight="600" color="var(--text-color12)">
+            <Heading
+              fontSize="20px"
+              fontWeight="600"
+              color="var(--text-color12)"
+            >
               Top Experts
             </Heading>
           </div>
@@ -52,7 +62,7 @@ const Dashboard = () => {
               {displayedExperts.map((expert, index) => (
                 <TopExperts
                   key={index}
-                  imageSrc={expert.imageSrc}
+                  imageSrc={expert.imageSrc || node}
                   name={expert.name}
                   expert={expert.expert}
                   score={expert.score}
@@ -124,7 +134,9 @@ const Dashboard = () => {
                   fontSize="12px"
                   fontWeight="500"
                   icon={
-                    <FaGreaterThan style={{ color: "black", fontSize: "10px" }} />
+                    <FaGreaterThan
+                      style={{ color: "black", fontSize: "10px" }}
+                    />
                   }
                 >
                   Search more
@@ -173,7 +185,7 @@ const Dashboard = () => {
             View all job openings
           </Button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
