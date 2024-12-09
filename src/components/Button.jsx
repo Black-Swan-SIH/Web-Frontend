@@ -21,6 +21,7 @@ const Button = ({
 }) => {
   return (
     <button
+    type="submit"
       className={`bt ${hoverBorder ? "hover-border" : ""}`}
       style={{
         marginRight: marginRight,
