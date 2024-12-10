@@ -1,4 +1,4 @@
-#main{
+#mainn{
     width: 80vw;
     display: flex;
     height: 80px;
@@ -6,21 +6,21 @@
     align-items: center;
 }
 
-.picture{
+#picturee{
     width: 36px;
     height: 36px;
     border-radius: 8px;
     background: #bdbdbd;
 }
 
-#main h1{
+#mainn h1{
     font-size: 24px;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
     color: #2C2C34;
 }
 
-.row{
+#roww{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +43,7 @@
     font-weight: 600;
 }
 
-.button{
+.buttonn{
     width: 80px;
     height: 30px;
     color: white;
