@@ -10,7 +10,6 @@ function Job() {
         style={{
           width: "30px",
           height: "30px",
-          border: "white solid 1px",
           borderRadius: "100%",
           backgroundColor: "grey",
         }}
