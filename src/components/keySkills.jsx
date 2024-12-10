@@ -1,7 +1,7 @@
 import { borderRadius, fontSize, minWidth, padding } from '@mui/system';
 import React, { useState } from 'react';
 
-const ExpandableDiv = ({name,content,borderRadius,padding,paddingLeft,position,cursor,width,minWidth,fontSize,backgroundColor,fontSize1}) => {
+const ExpandableDiv = ({name,content,borderRadius,padding,paddingLeft,position,cursor,width,minWidth,fontSize,backgroundColor,fontSize1,onClick}) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -15,8 +15,9 @@ const ExpandableDiv = ({name,content,borderRadius,padding,paddingLeft,position,c
       padding: padding,
       paddingLeft: paddingLeft,
       position: position,
-      display: "flex",
+      
       alignItems: "center",
+      alignContent:"center",
       cursor: cursor,
       width: isExpanded ? "fit-content" : width, // Wider when collapsed
       minWidth: minWidth, // Ensures the div remains wide
@@ -57,12 +58,13 @@ const ExpandableDiv = ({name,content,borderRadius,padding,paddingLeft,position,c
     {isExpanded && (
       <div
         style={{
-          marginTop: "16px",
+          marginTop: "5px",
           fontSize1: fontSize1,
+          width:"270px"
         }}
       >
-         {/* expanded content  */}
-      {content}
+         {content}
+    
       </div>
     )}
   </div>

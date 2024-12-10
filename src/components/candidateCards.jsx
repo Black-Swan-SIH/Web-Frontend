@@ -1,17 +1,22 @@
 import React from "react";
 import Button from "./Button";
 import ExpandableDiv from "./keySkills";
-function CandidateCards({ height }) {
+import { useState } from "react";
+function CandidateCards({ height,height2 }) {
+  const [divExpanded, setDivExpanded] = useState(false);
+  const divExpand = () => {
+    setDivExpanded(!divExpanded);
+  };
   return (
     <>
       <div
         style={{
-          height: height,
           marginRight: "35px",
           width: "320px",
           borderRadius: "10px",
           marginTop: "10px",
           backgroundColor: "white",
+          height:divExpanded ? height2 : height
         }}
       >
         <div className="ml-5 pl-5">
@@ -38,6 +43,7 @@ function CandidateCards({ height }) {
           <ul>
             <li>
               {" "}
+              <div onClick={divExpand}>
               <ExpandableDiv
                 name="Cut-offs and Interview Marks"
                 content="content"
@@ -51,8 +57,11 @@ function CandidateCards({ height }) {
                 minWidth="270px"
                 fontSize="14px"
                 fontSize1="8px"
+               
               />
-              <ExpandableDiv
+              </div>
+             <div onClick={divExpand}>
+             <ExpandableDiv
                 name="Recommendation Status"
                 content="Recommendations for Selection for Vacancies in various disciplines including: Mechanical Engg (Item no. 2), Material Science & Engg (Item no. 5), Production & Industrial Engg (Item no. 15), etc."
                 borderRadius="8px"
@@ -64,8 +73,10 @@ function CandidateCards({ height }) {
                 width="270px"
                 minWidth="270px"
                 fontSize="14px"
-                fontSize1="8px"
+                fontSize1="6px"
               />
+             </div>
+
 
 
             </li>

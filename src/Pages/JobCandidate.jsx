@@ -2,7 +2,21 @@ import React from 'react';
 import ExpandableDiv from '../components/keySkills';
 import { useNavigate } from 'react-router-dom';
 import Navbar3 from '../components/Navbar3';
-function Job() {
+import { useEffect } from 'react';
+
+
+function Job({ setShowNavbar }) {
+
+  useEffect(() => {
+    // Hide navbar when this page is loaded
+    setShowNavbar(false);
+
+    // Optionally reset navbar visibility when leaving this page
+    return () => {
+      setShowNavbar(true); // Show navbar again if navigating away
+    };
+  }, [setShowNavbar]);
+
     const renderCircles = (count) => {
         return [...Array(count)].map((_, index) => (
           <div

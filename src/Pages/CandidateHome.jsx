@@ -1,9 +1,21 @@
 import React from "react";
 import Navbar3 from "../components/Navbar3";
 import CandidateCards from "../components/candidateCards";
-import { borderRadius } from "@mui/system";
+import { borderRadius, height } from "@mui/system";
 import Button from "../components/Button";
-function CandidateHome() {
+import { useEffect } from "react";
+
+ 
+function CandidateHome({ setShowNavbar }) {
+  useEffect(() => {
+    // Hide navbar when this page is loaded
+    setShowNavbar(false);
+
+    // Optionally reset navbar visibility when leaving this page
+    return () => {
+      setShowNavbar(true); // Show navbar again if navigating away
+    };
+  }, [setShowNavbar]);
   return (
     <>
       <Navbar3 />
@@ -26,15 +38,17 @@ function CandidateHome() {
           <div className="container">
             <div className="row" style={{ margin: "1px" }}>
               <div className="col-md-3" style={{ marginRight: "55px" }}>
-                <CandidateCards height="300px" />
+              <CandidateCards height="300px" height2="350px" />
+              
+                
               </div>
 
               <div className="col-md-3" style={{ marginRight: "55px" }}>
-                <CandidateCards height="250px" />
+                <CandidateCards height="250px" height2="300px"/>
               </div>
 
               <div className="col-md-3" style={{ marginRight: "55px" }}>
-                <CandidateCards height="300px" />
+                <CandidateCards height="300px" height2="350px"/>
               </div>
             </div>
             <div className="row">
