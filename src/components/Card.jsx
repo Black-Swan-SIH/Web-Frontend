@@ -4,7 +4,7 @@ import React from 'react';
 
 function Cards({imageSrc, jobs, applications, open,backgColor }) {
     return ( <>
-        <div clasName="card mb-3" style={{border:"1px #96DBC2 solid",width:"370px",height:"90px",borderRadius:"12px",backgroundColor:"#8EB7A8"}}>
+        <div className="card mb-3" style={{border:"1px #96DBC2 solid",width:"370px",height:"90px",borderRadius:"12px",backgroundColor:"#8EB7A8"}}>
   <div className="row" style={{}}>
     <div className="col-md-4" style={{border:"1px #E6E6E6 solid",height:"75px", width:"75px",marginLeft:"23px", marginTop: "7px" ,borderRadius:"8px", backgroundColor:"#E6E6E6"}}>
     <img src={imageSrc} alt="Job Image" style={{objectFit:"contain",width:"100%" ,height:"100%"}}/>

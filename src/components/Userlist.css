@@ -1,9 +1,23 @@
-.ucontainer {
+.user-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 90px;
-  width: 30rem;
+  width: 37rem;
+  border-radius: 12px;
+  background-color: #9CAFB7;
+  background: #9CAFB7;
+  overflow: hidden;
+  padding: 0 7px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.userlist-container-invalid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  width: 28rem;
   border-radius: 12px;
   background-color: #9CAFB7;
   background: #9CAFB7;

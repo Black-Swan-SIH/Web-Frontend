@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Candidatelist.css";
 import node from "../assets/node.jpg";
-import data from "../data.jsx";
 import Heading from "../components/Heading.jsx";
 import Itemcount from "../components/Itemcount";
 import Userlist from "../components/Userlist.jsx";
@@ -9,22 +8,19 @@ import formatNumber from "../components/FormatNumber.jsx";
 import Boxes from "../components/Boxes.jsx";
 import { handleFocus } from "../components/Functions.jsx";
 import Panel from "../components/Panel.jsx";
-import data2 from "../Data2.jsx";
 import axios from "axios";
 
 const Candidatelist = ({ head, page }) => {
   const currentYear = new Date().getFullYear();
-  const [data, setData] = useState([]);
+  const [fetchedData, setFetchedData] = useState([]);
   const [sortedData, setSortedData] = useState([]);
   const [search, setSearch] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [ageRange, setAgeRange] = useState("all");
 
-  const total = data.length;
-  const maleCount = data.filter((user) => user.gender === "Male").length;
-  const femaleCount = data.filter((user) => user.gender === "Female").length;
   const searchInputRef = useRef(null);
 
+  // Keyboard Shortcut for Search Focus
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.ctrlKey && event.key === "k") {
@@ -39,28 +35,33 @@ const Candidatelist = ({ head, page }) => {
     };
   }, []);
 
+  // Fetch Data
   useEffect(() => {
     const fetchData = async () => {
       let endpoint = "";
-      if (page === "Userlist") {
-        endpoint = "/user";
+      let list = "";
+      if (page === "Candidatelist") {
+        endpoint = "candidate";
+        list = "candidates";
       } else if (page === "Panel") {
-        endpoint = "/panel";
+        endpoint = "panel";
+        list = "panels";
       } else if (page === "Expertlist") {
-        endpoint = "/expert";
+        endpoint = "expert";
+        list = "experts";
       }
 
       try {
         const userToken = localStorage.getItem("userToken");
-        const response = await axios.get(`https://api.mlsc.tech${endpoint}`, {
+        const response = await axios.get(`https://api.black-swan.tech/${endpoint}`, {
           headers: {
-            Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
+            Authorization: `Bearer ${userToken}`,
           },
-          withCredentials: true, // Include credentials if needed
+          withCredentials: true,
         });
-        console.log(response.data)
-        setData(response.data);
-        setSortedData(response.data);
+        console.log(response.data);
+      setFetchedData(response.data.data[list]);
+        setSortedData(response.data.data.experts);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -69,86 +70,90 @@ const Candidatelist = ({ head, page }) => {
     fetchData();
   }, [page]);
 
-  const filteredData = data
+  const calculateAge = (dob) => {
+    const birthDate = new Date(dob);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    if (
+      monthDifference < 0 ||
+      (monthDifference === 0 && today.getDate() < birthDate.getDate())
+    ) {
+      age--;
+    }
+    return age;
+  };
+
+  // Filter and Sort Data
+  const filteredData = fetchedData
     .filter((person) =>
-      `${person.first_name} ${person.last_name}`
+      `${person?.first_name} ${person?.last_name}`
         .toLowerCase()
         .includes(search.toLowerCase())
     )
     .filter((person) => {
       if (ageRange === "all") return true;
       const age = currentYear - person.age;
-      if (ageRange === "18-20") {
-        return age >= 18 && age <= 20;
-      }
-      if (ageRange === "21-30") {
-        return age >= 21 && age <= 30;
-      }
-      if (ageRange === "31-40") {
-        return age >= 31 && age <= 40;
-      }
+      if (ageRange === "18-20") return age >= 18 && age <= 20;
+      if (ageRange === "21-30") return age >= 21 && age <= 30;
+      if (ageRange === "31-40") return age >= 31 && age <= 40;
       return true;
     });
-  const sortData = filteredData.sort((a, b) => {
+
+  const sortFilteredData = filteredData.sort((a, b) => {
     if (sortOption === "name") {
-      return `${a.first_name} ${a.last_name}`.localeCompare(
-        `${b.first_name} ${b.last_name}`
+      return `${a?.first_name} ${a?.last_name}`.localeCompare(
+        `${b?.first_name} ${b?.last_name}`
       );
     }
     if (sortOption === "time-asc") {
       const timeA = new Date(`1970-01-01T${a.time}Z`);
       const timeB = new Date(`1970-01-01T${b.time}Z`);
-      return timeA - timeB; // Ascending order
+      return timeA - timeB;
     }
     if (sortOption === "time-desc") {
       const timeA = new Date(`1970-01-01T${a.time}Z`);
       const timeB = new Date(`1970-01-01T${b.time}Z`);
-      return timeB - timeA; // Descending order
+      return timeB - timeA;
     }
     return 0;
   });
 
-  const currentPage = () => {
-    if (page === "Userlist") {
-      return sortData.map((person) => (
+  const renderContent = () => {
+    if (page === "Candidatelist" || page === "Expertlist") {
+      return sortFilteredData.map((person) => (
+        console.log(person.averageProfileScore),
         <Userlist
-          key={person.id}
+          key={person?.id}
           imageSrc={node}
-          name={person.first_name}
-          age={currentYear - person.age}
-          work={person.work}
-          value={person.progress}
+          name={person?.name}
+          age={calculateAge(person.dateOfBirth)}
+          work={person?.currentPosition}
+          value={person?.averageProfileScore*10}
         />
       ));
     } else if (page === "Panel") {
-      return data2.map((person) => (
+      return sortFilteredData.map((person) => (
         <Panel
-          key={person.id}
+          key={person?.id}
           imageSrc={node}
-          name={person.name}
-          unit={person.unit}
-          age={person.age}
-          pronoun={person.pronoun}
-          experience={person.experience}
-          profileScore={person.profileScore}
-          reviews={person.reviews}
-          interview={person.interview}
-        />
-      ));
-    } else if (page === "Expertlist") {
-      return sortData.map((person) => (
-        <Userlist
-          key={person.id}
-          imageSrc={node}
-          name={person.first_name}
-          age={currentYear - person.age}
-          work={person.work}
-          value={person.progress}
+          name={person?.name}
+          unit={person?.unit}
+          age={calculateAge(person.dateOfBirth)}
+          pronoun={person?.pronoun}
+          experience={person?.experience}
+          profileScore={person?.profileScore}
+          reviews={person?.reviews}
+          interview={person?.interview}
         />
       ));
     }
-    return null;
   };
+
+  const total = fetchedData.length;
+  const maleCount = fetchedData.filter((user) => user?.gender === "male").length;
+  const femaleCount = fetchedData.filter((user) => user?.gender === "female").length;
+
   return (
     <div className="cont">
       <div className="head">
@@ -173,8 +178,8 @@ const Candidatelist = ({ head, page }) => {
       />
       <div className="my-[40px] w-[60%] h-[0.8px] bg-gray-400"></div>
       <div className="scrollable-container">
-        <div className={page === "Userlist" || "Expertlist" ? "person-list" : "panel-list"}>
-          {currentPage()}
+        <div className={page === "Candidatelist" || page === "Expertlist" ? "person-list" : "panel-list"}>
+          {renderContent()}
         </div>
       </div>
     </div>
