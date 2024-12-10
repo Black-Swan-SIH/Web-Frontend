@@ -1,13 +1,13 @@
 import React from "react";
-import "../styles/application.css"
+import "../styles/Application.css"
 
 const Status = ({department, type, location, locationType, status}) => {
   return (
-    <div id="main">
-      <div className="picture"></div>
+    <div id="mainn">
+      <div id="picturee"></div>
       <h1>Node.js Developer</h1>
       <div className="flex flex-col justify-start items-center">
-        <div className="row">
+        <div id="roww">
           <div className="flex">
             <p className="key">Department:</p>
             <p className="value">{department}</p>
@@ -18,7 +18,7 @@ const Status = ({department, type, location, locationType, status}) => {
             <p className="value">{type}</p>
           </div>
         </div>
-        <div className="row">
+        <div id="roww">
           <div className="flex">
             <p className="key">Location:</p>
             <p className="value">{location}</p>

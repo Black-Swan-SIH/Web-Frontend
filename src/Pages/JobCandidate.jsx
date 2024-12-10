@@ -2,7 +2,6 @@ import React from "react";
 import ExpandableDiv from "../components/keySkills";
 import { useNavigate } from "react-router-dom";
 import Navbar3 from "../components/Navbar3";
-import { auto } from "@popperjs/core";
 function Job() {
   const renderCircles = (count) => {
     return [...Array(count)].map((_, index) => (

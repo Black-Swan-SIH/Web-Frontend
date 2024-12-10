@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar3 from '../components/Navbar3'
-import "../styles/application.css"
 import Status from '../components/Status'
 
 const Application = () => {
