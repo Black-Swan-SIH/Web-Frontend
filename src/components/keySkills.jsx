@@ -28,7 +28,7 @@ const ExpandableDiv = ({name,content,borderRadius,padding,paddingLeft,position,c
   
     <div
     className='text-muted'
-      style={{ fontWeight:"600",
+      style={{ fontWeight:"500",
         fontSize: fontSize,
       }}
     >
