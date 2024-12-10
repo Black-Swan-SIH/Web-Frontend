@@ -38,7 +38,7 @@ function App() {
         <Route path="/profile" element={<Profile value={80} color="green" userId={1}/>} />
         <Route path="/experts" element={<Experts />} />
         <Route path="/job" element={<Job />} /> 
-        <Route path="/candidatelist" element={<Candidatelist head="Candidates" page="Userlist"/>}/>
+        <Route path="/candidatelist" element={<Candidatelist head="Candidates" page="Candidatelist"/>}/>
         <Route path="/expertlist" element={<Candidatelist head="Experts" page="Expertlist"/>}/>
         <Route path="/panel" element={<Candidatelist head="Select your panel" page="Panel"/>}/>
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>

@@ -4,13 +4,14 @@ import Heading from "./Heading";
 import ProgressBar from "./progressBar";
 
 const Userlist = ({ imageSrc, name, age, work, value }) => {
+  const isValidValue = !isNaN(value) && value !== undefined && value !== null;
   return (
-    <div className="ucontainer">
+    <div className={`userlist-container ${!isValidValue ? 'userlist-container-invalid' : ''}`}>
       <div className="image-container">
         <img src={imageSrc} alt="Job Image" className="image" />
       </div>
       <div className="text">
-        <Heading fontSize="20px" fontWeight="600" className="name" color="var(--text-color5)"        >
+        <Heading fontSize="18px" fontWeight="600" className="name" color="var(--text-color5)"        >
           {name}
         </Heading>
         <div className="age">
@@ -22,9 +23,11 @@ const Userlist = ({ imageSrc, name, age, work, value }) => {
           {work}
         </Heading>
       </div>
-      <div className="suffix">
-        <ProgressBar value={value} color="var(--bar-color)" />
-      </div>
+      {isValidValue && (
+        <div className="suffix">
+          <ProgressBar value={value} color="var(--bar-color)" />
+        </div>
+      )}
     </div>
   );
 };

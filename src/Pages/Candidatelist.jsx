@@ -39,24 +39,28 @@ const Candidatelist = ({ head, page }) => {
   useEffect(() => {
     const fetchData = async () => {
       let endpoint = "";
-      if (page === "Userlist") {
-        endpoint = "/user";
+      let list = "";
+      if (page === "Candidatelist") {
+        endpoint = "candidate";
+        list = "candidates";
       } else if (page === "Panel") {
-        endpoint = "/panel";
+        endpoint = "panel";
+        list = "panels";
       } else if (page === "Expertlist") {
-        endpoint = "/expert";
+        endpoint = "expert";
+        list = "experts";
       }
 
       try {
         const userToken = localStorage.getItem("userToken");
-        const response = await axios.get(`https://api.black-swan.tech${endpoint}`, {
+        const response = await axios.get(`https://api.black-swan.tech/${endpoint}`, {
           headers: {
             Authorization: `Bearer ${userToken}`,
           },
           withCredentials: true,
         });
         console.log(response.data);
-        setFetchedData(response.data.data.experts);
+      setFetchedData(response.data.data[list]);
         setSortedData(response.data.data.experts);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -116,9 +120,9 @@ const Candidatelist = ({ head, page }) => {
   });
 
   const renderContent = () => {
-    if (page === "Userlist" || page === "Expertlist") {
+    if (page === "Candidatelist" || page === "Expertlist") {
       return sortFilteredData.map((person) => (
-        console.log(person),
+        console.log(person.averageProfileScore),
         <Userlist
           key={person?.id}
           imageSrc={node}
@@ -174,7 +178,7 @@ const Candidatelist = ({ head, page }) => {
       />
       <div className="my-[40px] w-[60%] h-[0.8px] bg-gray-400"></div>
       <div className="scrollable-container">
-        <div className={page === "Userlist" || page === "Expertlist" ? "person-list" : "panel-list"}>
+        <div className={page === "Candidatelist" || page === "Expertlist" ? "person-list" : "panel-list"}>
           {renderContent()}
         </div>
       </div>
