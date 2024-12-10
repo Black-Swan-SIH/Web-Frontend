@@ -8,12 +8,12 @@ import { useEffect } from 'react';
 function Job({ setShowNavbar }) {
 
   useEffect(() => {
-    // Hide navbar when this page is loaded
+    
     setShowNavbar(false);
 
-    // Optionally reset navbar visibility when leaving this page
+    
     return () => {
-      setShowNavbar(true); // Show navbar again if navigating away
+      setShowNavbar(true); 
     };
   }, [setShowNavbar]);
 
