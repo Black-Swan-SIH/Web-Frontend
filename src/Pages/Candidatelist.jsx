@@ -10,9 +10,12 @@ import Boxes from "../components/Boxes.jsx";
 import { handleFocus } from "../components/Functions.jsx";
 import Panel from "../components/Panel.jsx";
 import data2 from "../Data2.jsx";
+import axios from "axios";
 
-const Candidatelist = ({ head,page }) => {
+const Candidatelist = ({ head, page }) => {
   const currentYear = new Date().getFullYear();
+  const [data, setData] = useState([]);
+  const [sortedData, setSortedData] = useState([]);
   const [search, setSearch] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [ageRange, setAgeRange] = useState("all");
@@ -21,7 +24,6 @@ const Candidatelist = ({ head,page }) => {
   const maleCount = data.filter((user) => user.gender === "Male").length;
   const femaleCount = data.filter((user) => user.gender === "Female").length;
   const searchInputRef = useRef(null);
-
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -36,6 +38,36 @@ const Candidatelist = ({ head,page }) => {
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let endpoint = "";
+      if (page === "Userlist") {
+        endpoint = "/user";
+      } else if (page === "Panel") {
+        endpoint = "/panel";
+      } else if (page === "Expertlist") {
+        endpoint = "/expert";
+      }
+
+      try {
+        const userToken = localStorage.getItem("userToken");
+        const response = await axios.get(`https://api.mlsc.tech${endpoint}`, {
+          headers: {
+            Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
+          },
+          withCredentials: true, // Include credentials if needed
+        });
+        console.log(response.data)
+        setData(response.data);
+        setSortedData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [page]);
 
   const filteredData = data
     .filter((person) =>
@@ -57,7 +89,7 @@ const Candidatelist = ({ head,page }) => {
       }
       return true;
     });
-  const sortedData = filteredData.sort((a, b) => {
+  const sortData = filteredData.sort((a, b) => {
     if (sortOption === "name") {
       return `${a.first_name} ${a.last_name}`.localeCompare(
         `${b.first_name} ${b.last_name}`
@@ -78,7 +110,7 @@ const Candidatelist = ({ head,page }) => {
 
   const currentPage = () => {
     if (page === "Userlist") {
-      return sortedData.map((person) => (
+      return sortData.map((person) => (
         <Userlist
           key={person.id}
           imageSrc={node}
@@ -88,8 +120,7 @@ const Candidatelist = ({ head,page }) => {
           value={person.progress}
         />
       ));
-    }
-    else if(page === "Panel"){
+    } else if (page === "Panel") {
       return data2.map((person) => (
         <Panel
           key={person.id}
@@ -102,6 +133,17 @@ const Candidatelist = ({ head,page }) => {
           profileScore={person.profileScore}
           reviews={person.reviews}
           interview={person.interview}
+        />
+      ));
+    } else if (page === "Expertlist") {
+      return sortData.map((person) => (
+        <Userlist
+          key={person.id}
+          imageSrc={node}
+          name={person.first_name}
+          age={currentYear - person.age}
+          work={person.work}
+          value={person.progress}
         />
       ));
     }
@@ -131,7 +173,7 @@ const Candidatelist = ({ head,page }) => {
       />
       <div className="my-[40px] w-[60%] h-[0.8px] bg-gray-400"></div>
       <div className="scrollable-container">
-        <div className={(page === "Userlist") ? "person-list" : "panel-list"}>
+        <div className={page === "Userlist" || "Expertlist" ? "person-list" : "panel-list"}>
           {currentPage()}
         </div>
       </div>

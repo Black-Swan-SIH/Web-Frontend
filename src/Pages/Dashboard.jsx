@@ -10,8 +10,12 @@ import { FaGreaterThan } from "react-icons/fa";
 import Joblist from "../components/Joblist";
 import axios from "axios";
 import TimeDifference from "../TimeDifference";
-
+import Cards from "../components/Card";
+import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
+
+  const navigate = useNavigate();
+
   const [total, setTotal] = useState(0);
   const [experts, setExperts] = useState([]);
   const [jobs, setJobs] = useState([]);
@@ -52,7 +56,6 @@ const Dashboard = () => {
         const data3 = response3.data;
         console.log(data3.data.subjects[0]);
         setJobs(data3.data.subjects);
-        
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -61,7 +64,10 @@ const Dashboard = () => {
   }, []);
 
   const displayedExperts = useMemo(() => experts.slice(0, 3), [experts]);
-  const displayedJobs = useMemo(() => (Array.isArray(jobs) ? jobs.slice(0, 2) : []), [jobs]);
+  const displayedJobs = useMemo(
+    () => (Array.isArray(jobs) ? jobs.slice(0, 2) : []),
+    [jobs]
+  );
 
   return (
     <div className="dash">
@@ -72,8 +78,14 @@ const Dashboard = () => {
           </Heading>
           <div className="items">
             <CandidateCount head="Candidates" value={formatNumber(total)} />
-            <CandidateCount head="Experts" value={formatNumber(experts.length)} />
-            <CandidateCount head="Job Openings" value={formatNumber(jobs.length)} />
+            <CandidateCount
+              head="Experts"
+              value={formatNumber(experts.length)}
+            />
+            <CandidateCount
+              head="Job Openings"
+              value={formatNumber(jobs.length)}
+            />
           </div>
           <div className="mt-[25px] mb-[20px]">
             <Heading
@@ -92,12 +104,15 @@ const Dashboard = () => {
                   imageSrc={expert.imageSrc ? expert.imageSrc : node}
                   name={expert.name}
                   expert={expert.currentPosition}
-                  score={(expert.averageProfileScore*10)}
+                  score={expert.averageProfileScore * 10}
                 />
               ))}
               {experts.length > 3 && (
                 <div className="py-5">
                   <Button
+                    onClick={() => {
+                      navigate("/expertlist");
+                    }}
                     color="var(--text-color14)"
                     bgcolor="transparent"
                     padding="2px"
@@ -144,7 +159,7 @@ const Dashboard = () => {
               Recent job openings
             </Heading>
             {displayedJobs.map((job, index) => (
-              <Joblist
+              <Cards
                 key={index}
                 imageSrc={job.imageSrc ? job.imageSrc : node}
                 backgColor="rgba(142, 183, 168, 1)"
@@ -156,6 +171,9 @@ const Dashboard = () => {
             {jobs.length > 2 && (
               <div className="py-5">
                 <Button
+                onClick={() => {
+                  navigate("/joblist");
+                }}
                   color="var(--text-color14)"
                   bgcolor="transparent"
                   fontSize="12px"
