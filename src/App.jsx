@@ -33,9 +33,9 @@ function App() {
     <Router>
        {isLoggedIn ? <NavBar2 /> : <NavBar />}
       <Routes>
-        <Route path="/expert/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.mlsc.tech/expert/signin">Sign In</Sign>} />
-        <Route path="/candidate/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.mlsc.tech/candidate/signin">Sign In</Sign>} />
-        <Route path="/admin/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.mlsc.tech/admin/signin">Sign In</Sign>} />
+        <Route path="/expert/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.black-swan.tech/expert/signin">Sign In</Sign>} />
+        <Route path="/candidate/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.black-swan.tech/candidate/signin">Sign In</Sign>} />
+        <Route path="/admin/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.black-swan.tech/admin/signin">Sign In</Sign>} />
         <Route path="/profile" element={<Profile value={80} color="green" userId={1}/>} />
         <Route path="/experts" element={<Experts />} />
         <Route path="/job" element={<Job />} /> 
