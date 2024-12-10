@@ -24,21 +24,21 @@ const Dashboard = () => {
     const fetchData = async () => {
       const userToken = localStorage.getItem("userToken");
       try {
-        const response1 = await axios.get("https://api.mlsc.tech/candidate", {
+        const response1 = await axios.get("https://api.black-swan.tech/candidate", {
           headers: {
             Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
           },
           withCredentials: true, // Include credentials if needed
         });
 
-        const response2 = await axios.get("https://api.mlsc.tech/expert", {
+        const response2 = await axios.get("https://api.black-swan.tech/expert", {
           headers: {
             Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
           },
           withCredentials: true, // Include credentials if needed
         });
 
-        const response3 = await axios.get("https://api.mlsc.tech/subject", {
+        const response3 = await axios.get("https://api.black-swan.tech/subject", {
           headers: {
             Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
           },
