@@ -26,6 +26,7 @@ import StepperForm from "./components/Stepperform";
 // import node from "./assets/node.jpg";
 import Navbar3 from "./components/Navbar3";
 import Application from "./Pages/Application";
+import JobApplications from "./Pages/JobApplications";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   
@@ -49,6 +50,7 @@ function App() {
         <Route path="/candidateHome" element={<CandidateHome/>}/>
         <Route path="/jobcandidate" element={<JobCandidate/>}/>
         <Route path="/applicationHistory" element={<Application/>}/>
+        <Route path="/jobApplications" element={<JobApplications/>}/>
         <Route path="/joblist" element={<JobList head="Jobs" page="Userlist"/>}/>
         <Route path="/stepperform" element={<StepperForm/>}/>
         {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
