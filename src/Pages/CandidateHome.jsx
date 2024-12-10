@@ -8,12 +8,12 @@ import { useEffect } from "react";
  
 function CandidateHome({ setShowNavbar }) {
   useEffect(() => {
-    // Hide navbar when this page is loaded
+
     setShowNavbar(false);
 
-    // Optionally reset navbar visibility when leaving this page
+  
     return () => {
-      setShowNavbar(true); // Show navbar again if navigating away
+      setShowNavbar(true); 
     };
   }, [setShowNavbar]);
   return (
@@ -44,7 +44,7 @@ function CandidateHome({ setShowNavbar }) {
               </div>
 
               <div className="col-md-3" style={{ marginRight: "55px" }}>
-                <CandidateCards height="250px" height2="300px"/>
+                <CandidateCards height="250px" height2="350px"/>
               </div>
 
               <div className="col-md-3" style={{ marginRight: "55px" }}>
