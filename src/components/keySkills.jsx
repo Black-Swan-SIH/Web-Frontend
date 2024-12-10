@@ -15,7 +15,8 @@ const ExpandableDiv = ({name,content,borderRadius,padding,paddingLeft,position,c
       padding: padding,
       paddingLeft: paddingLeft,
       position: position,
-      
+      display: "flex",
+      alignItems: "center",
       cursor: cursor,
       width: isExpanded ? "fit-content" : width, // Wider when collapsed
       minWidth: minWidth, // Ensures the div remains wide
@@ -40,10 +41,10 @@ const ExpandableDiv = ({name,content,borderRadius,padding,paddingLeft,position,c
       onClick={toggleExpand}
       style={{
         position: "absolute",
-        top: "8px",
+        top: "6px",
         right: "8px",
-        fontSize: "24px",
-        fontWeight: "bold",
+        fontSize: "20px",
+        fontWeight: "400",
         transform: isExpanded ? "rotate(45deg)" : "rotate(0deg)",
         transition: "transform 0.3s ease",
         cursor: "pointer",

@@ -30,7 +30,7 @@ function App() {
   
   return (
     <Router>
-       {isLoggedIn ? <NavBar2 /> : <NavBar />}
+       {/* {isLoggedIn ? <NavBar2 /> : <NavBar />} */}
       <Routes>
         <Route path="/expert/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.mlsc.tech/expert/signin">Sign In</Sign>} />
         <Route path="/candidate/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.mlsc.tech/candidate/signin">Sign In</Sign>} />
