@@ -29,7 +29,7 @@ function ProfilePage({ value, color }) {
       try {
         const userToken = localStorage.getItem("userToken");
         const response = await axios.get(
-          `https://api.black-swan.tech/${text}/${userId}`,{
+          `https://sih-backend-xengu.ondigitalocean.app/${text}/${userId}`,{
             headers: {
               Authorization: `Bearer ${userToken}`,
             },

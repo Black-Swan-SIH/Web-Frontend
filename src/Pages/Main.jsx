@@ -26,7 +26,7 @@ const Modal = ({ onClose, isLogin, setIsLogin }) => {
   //   e.preventDefault();
   //   try {
   //     const response = await axios.post(
-  //       "https://api.black-swan.tech/admin/signup",
+  //       "https://sih-backend-xengu.ondigitalocean.appndigitalocean.appndigitalocean.app/admin/signup",
   //       {
   //         username: formData.username,
   //         password: formData.password,
@@ -66,8 +66,8 @@ const Modal = ({ onClose, isLogin, setIsLogin }) => {
     setLoading(true);
     try {
       const url = isLogin
-        ? "https://api.black-swan.tech/admin/signin"
-        : "https://api.black-swan.tech/admin/signup";
+        ? "https://sih-backend-xengu.ondigitalocean.app/admin/signin"
+        : "https://sih-backend-xengu.ondigitalocean.app/admin/signup";
 
       const response = await axios.post(
         url,

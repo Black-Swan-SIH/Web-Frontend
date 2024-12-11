@@ -22,7 +22,7 @@ const JobsList = ({ head }) => {
       const userToken = localStorage.getItem("userToken");
       try {
         const response = await axios.get(
-          "https://api.black-swan.tech/subject",
+          "https://sih-backend-xengu.ondigitalocean.app/subject",
           {
             headers: {
               Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header

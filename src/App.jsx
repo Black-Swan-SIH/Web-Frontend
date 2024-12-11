@@ -45,9 +45,9 @@ const handleLogout = () => {
         {showNavbar && (isLoggedIn ? <NavBar2/> : <NavBar />)}
 
       <Routes>
-        <Route path="/expert/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.black-swan.tech/expert/signin">Sign In</Sign>} />
-        <Route path="/candidate/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.black-swan.tech/candidate/signin">Sign In</Sign>} />
-        <Route path="/admin/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.black-swan.tech/admin/signin">Sign In</Sign>} />
+        <Route path="/expert/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://sih-backend-xengu.ondigitalocean.app/expert/signin">Sign In</Sign>} />
+        <Route path="/candidate/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://sih-backend-xengu.ondigitalocean.app/candidate/signin">Sign In</Sign>} />
+        <Route path="/admin/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://sih-backend-xengu.ondigitalocean.app/admin/signin">Sign In</Sign>} />
         <Route path="/profile" element={<Profile value={80} color="green" userId={1}/>} />
         <Route path="/:text/:userId" element={<Profile />} />
         <Route path="/experts" element={<Experts />} />
@@ -57,7 +57,7 @@ const handleLogout = () => {
         <Route path="/panel" element={<Candidatelist head="Select your panel" page="Panel"/>}/>
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/main" element={<Main/>}/>
+        <Route path="/" element={<Main/>}/>
         
         
         <Route path="/joblist" element={<JobsList head="Jobs" page="Userlist"/>}/>

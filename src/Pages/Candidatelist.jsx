@@ -53,7 +53,7 @@ const Candidatelist = ({ head, page }) => {
 
       try {
         const userToken = localStorage.getItem("userToken");
-        const response = await axios.get(`https://api.black-swan.tech/${endpoint}`, {
+        const response = await axios.get(`https://sih-backend-xengu.ondigitalocean.app/${endpoint}`, {
           headers: {
             Authorization: `Bearer ${userToken}`,
           },
