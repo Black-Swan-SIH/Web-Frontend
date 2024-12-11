@@ -15,12 +15,12 @@ import Main from "./pages/Main";
 import CandidateHome from "./pages/CandidateHome";
 import Joblist from "./components/Joblist";
 
-import JobCandidate from "./Pages/JobCandidate";
+import JobCandidate from "./pages/JobCandidate";
 
 
 
 // import Joblist from "./components/Joblist";
-import JobList from "./Pages/JobList";
+import JobsList from "./pages/JobsList";
 import StepperForm from "./components/Stepperform";
 
 // import node from "./assets/node.jpg";
