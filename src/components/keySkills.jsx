@@ -19,8 +19,8 @@ const ExpandableDiv = ({name,content,borderRadius,padding,paddingLeft,position,c
       alignItems: "center",
       alignContent:"center",
       cursor: cursor,
-      width: isExpanded ? "fit-content" : width, // Wider when collapsed
-      minWidth: minWidth, // Ensures the div remains wide
+      width: isExpanded ? "fit-content" : width, 
+      minWidth: minWidth, 
       transition: "all 0.3s ease-in-out",
       ...(isExpanded && { backgroundColor: backgroundColor })
     }}
@@ -60,7 +60,9 @@ const ExpandableDiv = ({name,content,borderRadius,padding,paddingLeft,position,c
         style={{
           marginTop: "5px",
           fontSize1: fontSize1,
-          width:"270px"
+          width:"770px",
+          display:"flex-wrap",
+          
         }}
       >
          {content}
