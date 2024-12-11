@@ -1,45 +1,35 @@
-.search-container {
-    display: flex;
-    align-items: center;
-   
-   
-    margin: 0 auto;
-  }
-  
-  .search-input {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 5px;
-  }
-  
-  .search-input input {
-    border: none;
-    outline: none;
-    width: 100%;
-    margin-left: 5px;
-  }
-  
-  .search-icon {
-    color: #888;
-  }
-  
-  .search-button {
+.ccontainer {
+  display: flex;
+  align-items: center;
+  height: 65px;
+  width: 25vw;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(156, 175, 183, 1);
+}
 
-   padding-left: 8px;
-   padding-right: 8px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: lightgrey;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .search-button:hover {
-    background-color: #0056b3;
-  }
-  
+.image-ccontainer {
+  height:8vh;
+  width: 9vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+  margin-left: 10px; 
+}
+
+.cimage {
+  height: 100%;
+  width: 100%; /* Ensure the image fills the container */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 10%; /* Same as .image-ccontainer for consistent rounded corners */
+}
+
+.ctext {
+  flex: 1;
+  padding-left: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
