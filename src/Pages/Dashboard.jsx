@@ -13,7 +13,6 @@ import TimeDifference from "../TimeDifference";
 import Cards from "../components/Card";
 import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
-
   const navigate = useNavigate();
 
   const [total, setTotal] = useState(0);
@@ -23,27 +22,37 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       const userToken = localStorage.getItem("userToken");
+
       try {
-        const response1 = await axios.get("https://api.black-swan.tech/candidate", {
-          headers: {
-            Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
-          },
-          withCredentials: true, // Include credentials if needed
-        });
+        const response1 = await axios.get(
+          "https://api.black-swan.tech/candidate",
+          {
+            headers: {
+              Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
+            },
+            withCredentials: true, // Include credentials if needed
+          }
+        );
 
-        const response2 = await axios.get("https://api.black-swan.tech/expert", {
-          headers: {
-            Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
-          },
-          withCredentials: true, // Include credentials if needed
-        });
+        const response2 = await axios.get(
+          "https://api.black-swan.tech/expert",
+          {
+            headers: {
+              Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
+            },
+            withCredentials: true, // Include credentials if needed
+          }
+        );
 
-        const response3 = await axios.get("https://api.black-swan.tech/subject", {
-          headers: {
-            Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
-          },
-          withCredentials: true, // Include credentials if needed
-        });
+        const response3 = await axios.get(
+          "https://api.black-swan.tech/subject",
+          {
+            headers: {
+              Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
+            },
+            withCredentials: true, // Include credentials if needed
+          }
+        );
 
         const data1 = response1.data;
         // console.log(data1);
@@ -171,20 +180,15 @@ const Dashboard = () => {
             {jobs.length > 2 && (
               <div className="py-5">
                 <Button
-                onClick={() => {
-                  navigate("/joblist");
-                }}
-                  color="var(--text-color14)"
-                  bgcolor="transparent"
-                  fontSize="12px"
-                  fontWeight="500"
-                  icon={
-                    <FaGreaterThan
-                      style={{ color: "black", fontSize: "10px" }}
-                    />
-                  }
+                  bgcolor="var(--bg-color2)"
+                  padding="14px 5px"
+                  fontSize="14px"
+                  fontWeight="600"
+                  color="var(--text-color22)"
+                  width="170px"
+                  borderRadius="8px"
                 >
-                  Search more
+                  Add an expert
                 </Button>
               </div>
             )}

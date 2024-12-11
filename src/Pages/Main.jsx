@@ -4,32 +4,141 @@ import play from "../assets/play.png";
 import Lottie from "lottie-react";
 import home from "../assets/home.json";
 import at from "../assets/at.png";
-import Button from "../components/Button";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const Modal = ({ onClose }) => {
+const Modal = ({ onClose, isLogin, setIsLogin }) => {
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post(
+  //       "https://api.black-swan.tech/admin/signup",
+  //       {
+  //         username: formData.username,
+  //         password: formData.password,
+  //         confirmPassword: formData.password,
+  //       },
+  //       { withCredentials: true }
+  //     );
+  //     console.log("Response from backend:", response.data);
+  //     // const token = response.data.data.userToken; // Adjust this based on the API response structure
+  //     // if (token) {
+  //     //   localStorage.setItem("userToken", token);
+  //     //   console.log("Token stored in local storage:", token);
+  //     // } else {
+  //     //   console.warn("No token received in the response.");
+  //     // }
+  //     // console.log("Response from backend:", response.status);
+  //     // console.log("Response from backend:", response.data.data.role);
+  //     // if (response.data.data.role === "candidate") {
+  //     //   navigate("/candidatelist");
+  //     // } else if (response.data.data.role === "admin") {
+  //     //   navigate("/dashboard");
+  //     // }
+  //     setFormData({ username: "", password: "" });
+  //   } catch (error) {
+  //     console.error("Error submitting form:", error);
+  //     if (error.response) {
+  //       alert(`Error: ${error.response.data.message}`);
+  //     } else {
+  //       alert("An unexpected error occurred.");
+  //     }
+  //   }
+  // };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      
+      const url = isLogin
+        ? "https://api.black-swan.tech/admin/signin"
+        : "https://api.black-swan.tech/admin/signup";
+        
+        const response = await axios.post(
+          url,
+          {
+            username: formData.username,
+            password: formData.password,
+          },
+          { withCredentials: true }
+        );
+        console.log(response.data);
+      if (isLogin) {
+        localStorage.setItem("userToken", response.data.data.userToken);
+        navigate("/dashboard");
+      } else {
+        setMessage("Admin added successfully");
+        setIsLogin(true);
+      }
+      setFormData({ username: "", password: ""});
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setMessage(error.response?.data?.message || "An error occurred. Please try again.");
+    }
+  };
+
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h1>Register</h1>
-        <div id="form" style={{
-          width: "33vw",
-        }}>
-          <div style={{width: "80%"}}>
-            <h2>Username</h2>
-            <input style={{width: "100%"}} type="text" placeholder="username" />
+        <h1>{isLogin ? "Login" : "Register"}</h1>
+        {message && <p className="message">{message}</p>}
+        <form id="form" onSubmit={handleSubmit}>
+          <div
+            id="forms"
+            style={{
+              width: "33vw",
+            }}
+          >
+            <div style={{ width: "80%" }}>
+              <h2>Username</h2>
+              <input
+                style={{ width: "100%" }}
+                id="username"
+                name="username"
+                type="text"
+                placeholder="Username"
+                value={formData.username}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div style={{ width: "80%" }}>
+              <h2>Password</h2>
+              <input
+                style={{ width: "100%" }}
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
           </div>
-
-          <div style={{width: "80%"}}>
-            <h2>Password</h2>
-            <input style={{width: "100%"}} type="text" placeholder="Password" />
+          <br />
+          <div style={{ width: "100px" }}>
+            <button type="submit" className="submit-button">
+              {isLogin ? "Login" : "Register"}
+            </button>
           </div>
-        </div>
-        <br />
-        <div style={{width: "100px"}}>
-          <button style={{width: "100%"}} className="close-button" onClick={onClose}>
-            Register
-          </button>
-        </div>
+        </form>
+        <button className="close-button" onClick={onClose}>
+          Close
+        </button>
       </div>
     </div>
   );
@@ -37,6 +146,7 @@ const Modal = ({ onClose }) => {
 
 const Main = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   const handleGetStartedClick = () => {
     setIsModalOpen(true);
@@ -75,7 +185,7 @@ const Main = () => {
           <img src={at} alt="" width={"60px"} />
         </div>
       </div>
-      {isModalOpen && <Modal onClose={closeModal} />}
+      {isModalOpen && <Modal onClose={closeModal} isLogin={isLogin} setIsLogin={setIsLogin}/>}
     </div>
   );
 };
