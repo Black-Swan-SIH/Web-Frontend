@@ -1,8 +1,11 @@
 import React from "react";
 import Prof from "./Prof";
 import Review from "./Review";
+import { useNavigate } from "react-router-dom";
 
 const Panel = ({
+  id,
+  text,
   imageSrc,
   name,
   unit,
@@ -13,8 +16,12 @@ const Panel = ({
   reviews,
   interview,
 }) => {
+  const navigate=useNavigate();
+  const handleClick = () => {
+    navigate(`/${text}/${id}`);
+  };
   return (
-    <div className="flex mb-12 justify-between items-center">
+    <div className="flex mb-12 justify-between items-center" onClick={handleClick} style={{ cursor: "pointer" }}>
       <div style={{ flexBasis: "50%" }}>
         <Prof
           imageSrc={imageSrc}

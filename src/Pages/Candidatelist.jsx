@@ -59,7 +59,7 @@ const Candidatelist = ({ head, page }) => {
           },
           withCredentials: true,
         });
-        console.log(response.data);
+        console.log(response.data.data);
       setFetchedData(response.data.data[list]);
         setSortedData(response.data.data.experts);
       } catch (error) {
@@ -120,10 +120,12 @@ const Candidatelist = ({ head, page }) => {
   });
 
   const renderContent = () => {
-    if (page === "Candidatelist" || page === "Expertlist") {
+    if (page === "Candidatelist") {
       return sortFilteredData.map((person) => (
         <Userlist
           key={person?.id}
+          id={person._id}
+          text="candidate"
           imageSrc={node}
           name={person?.name}
           age={calculateAge(person.dateOfBirth)}
@@ -131,10 +133,27 @@ const Candidatelist = ({ head, page }) => {
           value={person?.averageProfileScore*10}
         />
       ));
-    } else if (page === "Panel") {
+    } 
+    else if(page === "Expertlist") {
+      return sortFilteredData.map((person) => (
+        <Userlist
+          key={person?.id}
+          id={person._id}
+          text="expert"
+          imageSrc={node}
+          name={person?.name}
+          age={calculateAge(person.dateOfBirth)}
+          work={person?.currentPosition}
+          value={person?.averageProfileScore}
+        />
+      ));
+    }
+    else if (page === "Panel") {
       return sortFilteredData.map((person) => (
         <Panel
           key={person?.id}
+          id={person._id}
+          text="panel"
           imageSrc={node}
           name={person?.name}
           unit={person?.unit}

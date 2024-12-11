@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "../App.css";
@@ -9,23 +9,75 @@ import { RecoilRoot } from "recoil";
 import TopSkills from "./topSkills";
 import Cards from "./Card";
 import Prof from "./Prof";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-function Profile({ value, color, userId }) {
+function Profile({ value, color, userId, text }) {
   return (
     <RecoilRoot>
-      <ProfilePage value={value} color={color} userId={userId} />
+      <ProfilePage value={value} color={color} userId={userId} text={text} />
     </RecoilRoot>
   );
 }
 
-function ProfilePage({ value, color, userId }) {
+function ProfilePage({ value, color }) {
+  const { userId, text } = useParams();
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const userToken = localStorage.getItem("userToken");
+        const response = await axios.get(
+          `https://api.black-swan.tech/${text}/${userId}`,{
+            headers: {
+              Authorization: `Bearer ${userToken}`,
+            },
+            withCredentials: true,
+          }
+        );
+        console.log(response.data.data[text]);
+        setUserData(response.data.data[text]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchUserData();
+  }, [userId, text]);
+
+  const calculateAge = (dob) => {
+    const birthDate = new Date(dob);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    if (
+      monthDifference < 0 ||
+      (monthDifference === 0 && today.getDate() < birthDate.getDate())
+    ) {
+      age--;
+    }
+    return age;
+  };
+
+  const millisecondsToYear=(milliseconds)=>{
+    const years = milliseconds / (1000*60*60*24*365.25);
+    return years.toFixed(1);
+  }
+
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
+
+  function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   return (
     <>
       <div
         className="container"
         style={{ marginLeft: "70px", width: "1350px", marginRight: "0px" }}
       >
-        {/* Header Section */}
         <div className="container mt-0 pt-5" style={{ marginLeft: "30px" }}>
           <div
             className="container row mt-5 pt-5 "
@@ -33,10 +85,10 @@ function ProfilePage({ value, color, userId }) {
           >
             <Prof
               imageSrc="https://static.vecteezy.com/system/resources/previews/008/306/791/non_2x/square-with-round-corner-glyph-black-icon-vector.jpg"
-              name="Om rajpal"
+              name={userData.name}
               unit="1st Reconnaissance Squadron"
-              age="19"
-              pronoun="He / Him"
+              age={calculateAge(userData.dateOfBirth)}
+              pronoun={capitalizeFirstLetter(userData.gender)}
               experience="Beginner"
               height="240px"
               width="240px"
@@ -76,24 +128,14 @@ function ProfilePage({ value, color, userId }) {
                   </span>
                 </p>
                 <ul className="mr-5 pr-5">
-                  <li style={{ marginBottom: "10px", marginTop: "15px" }}>
-                    <TopSkills value={80} skill="Docker" />
-                  </li>
-                  <li style={{ marginBottom: "10px" }}>
-                    <TopSkills value={70} skill="Node.js" />
-                  </li>
-                  <li style={{ marginBottom: "10px" }}>
-                    <TopSkills value={50} skill="TypeScript" />
-                  </li>
-                  <li style={{ marginBottom: "10px" }}>
-                    <TopSkills value={90} skill="Next.js" />
-                  </li>
-                  <li style={{ marginBottom: "10px" }}>
-                    <TopSkills value={100} skill="Flutter" />
-                  </li>
+                {userData.skills.map((skill, index) => (
+              <li key={index} style={{ marginBottom: "10px", marginTop: index === 0 ? "15px" : "10px" }}>
+                <TopSkills value={millisecondsToYear(skill.duration)} skill={skill.skill} />
+              </li>
+            ))}
                 </ul>
               </div>
-              <div className="px-5 mx-5 mt-3">
+              {(text==="expert" &&<div className="px-5 mx-5 mt-3">
                 <h1
                   style={{
                     fontSize: "27px",
@@ -119,10 +161,9 @@ function ProfilePage({ value, color, userId }) {
                     </p>
                   </li>
                 </ul>
-              </div>
+              </div>)}
             </div>
 
-            {/* Center Section */}
             <div className="col-md-4">
               <div
                 className=""
@@ -176,11 +217,15 @@ function ProfilePage({ value, color, userId }) {
                 >
                   Profile Score
                 </h4>
-                {/* <ProgressBar value={value} color="#fa8072"/>
-                 */}
-                <div style={{ transform: "scale(0.6)", padding: "10px", width: "300px"}}>
+                <div
+                  style={{
+                    transform: "scale(0.6)",
+                    padding: "10px",
+                    width: "300px",
+                  }}
+                >
                   <CircularProgressbarWithChildren
-                    value={value}
+                    value={userData.averageRelevancyScore}
                     styles={{
                       path: {
                         stroke: "#DE8F6E",
@@ -194,20 +239,29 @@ function ProfilePage({ value, color, userId }) {
                       },
                     }}
                   >
-                    {/* <img
-          style={{ width: 250, marginTop: 105 }}
-          src="https://cdn-icons-png.flaticon.com/256/552/552721.png"
-          alt="doge"
-        /> */}
-                    <div style={{ fontSize: 45, marginTop: "400px", fontWeight: "500" }}>
-                      <p>{value} / 100</p>
+                    <div
+                      style={{
+                        fontSize: 45,
+                        marginTop: "400px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      <p>{userData.averageRelevancyScore
+                      } / 100</p>
                     </div>
                   </CircularProgressbarWithChildren>
                 </div>
               </div>
               <div className="flex justify-center">
-
-              <hr color="black" style={{ marginTop: "15px", fontWeight: "600", width: "200px" , color: "black"}}></hr>
+                <hr
+                  color="black"
+                  style={{
+                    marginTop: "15px",
+                    fontWeight: "600",
+                    width: "200px",
+                    color: "black",
+                  }}
+                ></hr>
               </div>
               <p
                 style={{ textAlign: "center", marginTop: "15px" }}

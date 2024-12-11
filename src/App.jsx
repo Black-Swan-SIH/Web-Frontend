@@ -45,6 +45,7 @@ const handleLogout = () => {
         <Route path="/candidate/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.black-swan.tech/candidate/signin">Sign In</Sign>} />
         <Route path="/admin/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.black-swan.tech/admin/signin">Sign In</Sign>} />
         <Route path="/profile" element={<Profile value={80} color="green" userId={1}/>} />
+        <Route path="/:text/:userId" element={<Profile />} />
         <Route path="/experts" element={<Experts />} />
         <Route path="/job" element={<Job />} /> 
         <Route path="/candidatelist" element={<Candidatelist head="Candidates" page="Candidatelist"/>}/>

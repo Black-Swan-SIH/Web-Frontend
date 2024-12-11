@@ -2,11 +2,22 @@ import React from "react";
 import "../styles/Userlist.css";
 import Heading from "./Heading";
 import ProgressBar from "./progressBar";
+import { useNavigate } from "react-router-dom";
+import Profile from "./profile";
 
-const Userlist = ({ imageSrc, name, age, work, value }) => {
+const Userlist = ({ imageSrc, name, age, work, value,id,text }) => {
+  const navigate=useNavigate();
   const isValidValue = !isNaN(value) && value !== undefined && value !== null;
+  console.log(id)
+  const handleClick = () => {
+    navigate(`/${text}/${id}`);
+  };
   return (
-    <div className={`userlist-container ${!isValidValue ? 'userlist-container-invalid' : ''}`}>
+    <div
+      className={`userlist-container ${!isValidValue ? 'userlist-container-invalid' : ''}`}
+      onClick={handleClick}
+      style={{ cursor: "pointer" }}
+    >
       <div className="image-container">
         <img src={imageSrc} alt="Job Image" className="image" />
       </div>
