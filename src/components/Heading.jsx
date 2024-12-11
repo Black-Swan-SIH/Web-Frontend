@@ -1,5 +1,5 @@
 import React from "react";
-import "./Heading.css";
+import "../styles/Heading.css";
 
 const Heading = ({ fontSize, color, fontWeight, children }) => {
   return (

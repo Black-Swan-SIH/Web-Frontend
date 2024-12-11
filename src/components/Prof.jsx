@@ -1,5 +1,5 @@
 import React from "react";
-import "./Prof.css";
+import "../styles/Prof.css";
 import Heading from "./Heading";
 import Button from "./Button";
 const Prof = ({

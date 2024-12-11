@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import "./JobList.css";
+import "../styles/JobsList.css";
 import node from "../assets/node.jpg";
 import Heading from "../components/Heading.jsx";
 import Itemcount from "../components/Itemcount";
@@ -10,7 +10,7 @@ import axios from "axios";
 import Cards from "../components/Card.jsx";
 import TimeDifference from "../TimeDifference.jsx";
 
-const JobList = ({ head }) => {
+const JobsList = ({ head }) => {
   const [jobs, setJobs] = useState([]);
   const [search, setSearch] = useState("");
   const [sortOption, setSortOption] = useState("");
@@ -165,4 +165,4 @@ const JobList = ({ head }) => {
   );
 };
 
-export default JobList;
+export default JobsList;

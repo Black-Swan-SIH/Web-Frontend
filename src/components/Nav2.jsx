@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Nav2.css";
+import "../styles/Nav2.css";
 import Button from "./Button";
 import proicon from "../assets/profile.png";
 import addition from "../assets/addition.svg";

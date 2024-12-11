@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Experts.css";
+import "../styles/Experts.css";
 import Input from "../components/Input";
 import Button from "../components/Button";
 

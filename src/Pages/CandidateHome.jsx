@@ -38,17 +38,17 @@ function CandidateHome({ setShowNavbar }) {
           <div className="container">
             <div className="row" style={{ margin: "1px" }}>
               <div className="col-md-3" style={{ marginRight: "55px" }}>
-              <CandidateCards height="300px" height2="400px" height3="430px" />
+              <CandidateCards height="300px" height2="350px" />
               
                 
               </div>
 
               <div className="col-md-3" style={{ marginRight: "55px" }}>
-                <CandidateCards height="250px" height2="400px" height3="430px"/>
+                <CandidateCards height="250px" height2="350px"/>
               </div>
 
               <div className="col-md-3" style={{ marginRight: "55px" }}>
-                <CandidateCards height="300px" height2="400px" height3="430px"/>
+                <CandidateCards height="300px" height2="350px"/>
               </div>
             </div>
             <div className="row">

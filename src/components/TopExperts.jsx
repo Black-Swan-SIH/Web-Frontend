@@ -1,6 +1,6 @@
 import React from 'react'
 import Heading from './Heading'
-import './TopExperts.css'
+import '../styles/TopExperts.css'
 
 const TopExperts = ({imageSrc,name,expert,score}) => {
   return (

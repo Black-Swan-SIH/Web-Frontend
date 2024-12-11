@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Candidatelist.css";
+import "../styles/Candidatelist.css";
 import node from "../assets/node.jpg";
 import Heading from "../components/Heading.jsx";
 import Itemcount from "../components/Itemcount";

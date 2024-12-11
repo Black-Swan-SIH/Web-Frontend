@@ -33,7 +33,7 @@ function Job({setShowNavbar}) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/candidatelist"); 
+    navigate("/candidatelist"); // Replace '/another-page' with your route
   };
 
 
@@ -117,14 +117,11 @@ function Job({setShowNavbar}) {
                           transform: "translateX(-10px)",
                         }}
                       >
-                        <li className="mt-2">
+                        <li>
                           {" "}
                           <ExpandableDiv
                             name="Core development"
-                            content="
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quod consequuntur eum architecto, vel repudiandae animi iusto veritatis sit illum magnam cumque suscipit nesciunt reprehenderit. Est modi beatae labore nemo
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, libero nihil officiis officia sint labore ullam? Cupiditate aliquam libero repudiandae harum fuga quisquam in minima quaerat repellendus. Iure, deleniti illum.</p>
-                            "
+                            content="content"
                             borderRadius="8px"
                             padding="16px"
                             paddingLeft="10px"
@@ -137,11 +134,11 @@ function Job({setShowNavbar}) {
                             fontSize1="16px"
                           />
                         </li>
-                        <li className="mt-2">
+                        <li>
                           {" "}
                           <ExpandableDiv
                             name="Database Management"
-                            content="content content"
+                            content="content"
                             borderRadius="8px"
                             padding="16px"
                             paddingLeft="10px"

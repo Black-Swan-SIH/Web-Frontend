@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route,useLocation } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/nav";
@@ -6,15 +6,15 @@ import NavBar2 from "./components/Nav2";
 import Sign from "./components/SignIn";
 import Profile from "./components/profile";
 import { green } from "@mui/material/colors";
-import Experts from "./Pages/Experts";
+import Experts from "./pages/Experts";
 import Job from "./components/Job";
-import Candidatelist from "./Pages/Candidatelist";
+import Candidatelist from "./pages/Candidatelist";
 import ProgressBar from "./components/progressBar";
-import Dashboard from "./Pages/Dashboard";
-import Main from "./Pages/Main";
-import CandidateHome from "./Pages/CandidateHome";
+import Dashboard from "./pages/Dashboard";
+import Main from "./pages/Main";
+import CandidateHome from "./pages/CandidateHome";
 import Joblist from "./components/Joblist";
-import JoblistCandidate from "./Pages/JoblistCandidate";
+
 import JobCandidate from "./Pages/JobCandidate";
 
 
@@ -26,15 +26,23 @@ import StepperForm from "./components/Stepperform";
 // import node from "./assets/node.jpg";
 import Navbar3 from "./components/Navbar3";
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   
  const [showNavbar, setShowNavbar] = useState(true);
+ useEffect(() => {
+  const token = localStorage.getItem("userToken");
+  setIsLoggedIn(!!token); // Set login state based on token presence
+}, []);
 
+const handleLogout = () => {
+  localStorage.removeItem("userToken");
+  setIsLoggedIn(false);
+};
 
   
   return (
     <Router>
-        {showNavbar && (isLoggedIn ? <NavBar2 /> : <NavBar />)}
+        {showNavbar && (isLoggedIn ? <NavBar2/> : <NavBar />)}
 
       <Routes>
         <Route path="/expert/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.black-swan.tech/expert/signin">Sign In</Sign>} />
@@ -48,16 +56,14 @@ function App() {
         <Route path="/panel" element={<Candidatelist head="Select your panel" page="Panel"/>}/>
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
-
         <Route path="/main" element={<Main/>}/>
         
         
-        <Route path="/joblist" element={<JobList head="Jobs" page="Userlist"/>}/>
-        <Route path="/stepperform" element={<StepperForm/>}/>
+        <Route path="/joblist" element={<JobsList head="Jobs" page="Userlist"/>}/>
+        <Route path="/form" element={<StepperForm/>}/>
         {}
         <Route path="/candidateHome" element={<CandidateHome setShowNavbar={setShowNavbar}/>}/>
         <Route path="/jobcandidate" element={<JobCandidate setShowNavbar={setShowNavbar}/>}/>
-        <Route path="/joblistcandidate" element={<JoblistCandidate setShowNavbar={setShowNavbar}/>}/>
         
         {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
       </Routes>
