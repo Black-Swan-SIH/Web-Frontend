@@ -14,7 +14,7 @@ import Dashboard from "./Pages/Dashboard";
 import Main from "./Pages/Main";
 import CandidateHome from "./Pages/CandidateHome";
 import Joblist from "./components/Joblist";
-
+import JoblistCandidate from "./Pages/JoblistCandidate";
 import JobCandidate from "./Pages/JobCandidate";
 
 
@@ -48,6 +48,7 @@ function App() {
         <Route path="/panel" element={<Candidatelist head="Select your panel" page="Panel"/>}/>
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
+
         <Route path="/main" element={<Main/>}/>
         
         
@@ -56,6 +57,7 @@ function App() {
         {}
         <Route path="/candidateHome" element={<CandidateHome setShowNavbar={setShowNavbar}/>}/>
         <Route path="/jobcandidate" element={<JobCandidate setShowNavbar={setShowNavbar}/>}/>
+        <Route path="/joblistcandidate" element={<JoblistCandidate setShowNavbar={setShowNavbar}/>}/>
         
         {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
       </Routes>
