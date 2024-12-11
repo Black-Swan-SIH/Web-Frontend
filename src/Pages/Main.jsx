@@ -14,6 +14,7 @@ const Modal = ({ onClose, isLogin, setIsLogin }) => {
     confirmPassword: "",
   });
   const [message, setMessage] = useState("");
+  const [loading,setLoading]=useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -61,32 +62,37 @@ const Modal = ({ onClose, isLogin, setIsLogin }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage("");
+    setLoading(true);
     try {
-      
       const url = isLogin
         ? "https://api.black-swan.tech/admin/signin"
         : "https://api.black-swan.tech/admin/signup";
-        
-        const response = await axios.post(
-          url,
-          {
-            username: formData.username,
-            password: formData.password,
-          },
-          { withCredentials: true }
-        );
-        console.log(response.data);
+
+      const response = await axios.post(
+        url,
+        {
+          username: formData.username,
+          password: formData.password,
+        },
+        { withCredentials: true }
+      );
+
       if (isLogin) {
         localStorage.setItem("userToken", response.data.data.userToken);
         navigate("/dashboard");
       } else {
-        setMessage("Admin added successfully");
+        setMessage("Admin added successfully.");
         setIsLogin(true);
       }
-      setFormData({ username: "", password: ""});
+
+      setFormData({ username: "", password: "" });
     } catch (error) {
-      console.error("Error submitting form:", error);
-      setMessage(error.response?.data?.message || "An error occurred. Please try again.");
+      setMessage(
+        error.response?.data?.message || "An error occurred. Please try again."
+      );
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -131,11 +137,17 @@ const Modal = ({ onClose, isLogin, setIsLogin }) => {
           </div>
           <br />
           <div style={{ width: "100px" }}>
-            <button type="submit" className="submit-button">
-              {isLogin ? "Login" : "Register"}
+            <button type="submit" className="submit-button" disabled={loading}>
+              {loading ? "Processing..." : isLogin ? "Login" : "Register"}
             </button>
           </div>
         </form>
+        <button
+          onClick={() => setIsLogin(!isLogin)}
+          className="toggle-button"
+        >
+          {isLogin ? "Switch to Register" : "Switch to Login"}
+        </button>
         <button className="close-button" onClick={onClose}>
           Close
         </button>

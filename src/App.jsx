@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route,useLocation } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/nav";
@@ -22,15 +22,23 @@ import StepperForm from "./components/Stepperform";
 // import node from "./assets/node.jpg";
 import Navbar3 from "./components/Navbar3";
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   
  const [showNavbar, setShowNavbar] = useState(true);
+ useEffect(() => {
+  const token = localStorage.getItem("userToken");
+  setIsLoggedIn(!!token); // Set login state based on token presence
+}, []);
 
+const handleLogout = () => {
+  localStorage.removeItem("userToken");
+  setIsLoggedIn(false);
+};
 
   
   return (
     <Router>
-        {showNavbar && (isLoggedIn ? <NavBar2 /> : <NavBar />)}
+        {showNavbar && (isLoggedIn ? <NavBar2/> : <NavBar />)}
 
       <Routes>
         <Route path="/expert/signin" element={<Sign but="Register" a="Login" text="Already have an account?" apiUrl="https://api.black-swan.tech/expert/signin">Sign In</Sign>} />
@@ -44,7 +52,7 @@ function App() {
         <Route path="/panel" element={<Candidatelist head="Select your panel" page="Panel"/>}/>
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/" element={<Main/>}/>
+        <Route path="/" element={<Main setIsLoggedIn={setIsLoggedIn}/>}/>
         
         
         <Route path="/joblist" element={<JobsList head="Jobs" page="Userlist"/>}/>
