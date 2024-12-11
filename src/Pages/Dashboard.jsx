@@ -25,7 +25,7 @@ const Dashboard = () => {
 
       try {
         const response1 = await axios.get(
-          "https://api.black-swan.tech/candidate",
+          "https://sih-backend-xengu.ondigitalocean.app/candidate",
           {
             headers: {
               Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
@@ -35,7 +35,7 @@ const Dashboard = () => {
         );
 
         const response2 = await axios.get(
-          "https://api.black-swan.tech/expert",
+          "https://sih-backend-xengu.ondigitalocean.app/expert",
           {
             headers: {
               Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
@@ -45,7 +45,7 @@ const Dashboard = () => {
         );
 
         const response3 = await axios.get(
-          "https://api.black-swan.tech/subject",
+          "https://sih-backend-xengu.ondigitalocean.app/subject",
           {
             headers: {
               Authorization: `Bearer ${userToken}`, // Add the token to the Authorization header
@@ -180,6 +180,9 @@ const Dashboard = () => {
             {jobs.length > 2 && (
               <div className="py-5">
                 <Button
+                onClick={() => {
+                  navigate("/form");
+                }}
                   bgcolor="var(--bg-color2)"
                   padding="14px 5px"
                   fontSize="14px"

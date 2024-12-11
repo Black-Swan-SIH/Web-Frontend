@@ -48,7 +48,7 @@ function App() {
         
         
         <Route path="/joblist" element={<JobsList head="Jobs" page="Userlist"/>}/>
-        <Route path="/stepperform" element={<StepperForm/>}/>
+        <Route path="/form" element={<StepperForm/>}/>
         {}
         <Route path="/candidateHome" element={<CandidateHome setShowNavbar={setShowNavbar}/>}/>
         <Route path="/jobcandidate" element={<JobCandidate setShowNavbar={setShowNavbar}/>}/>
