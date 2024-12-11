@@ -113,7 +113,7 @@ const Dashboard = () => {
                   imageSrc={expert.imageSrc ? expert.imageSrc : node}
                   name={expert.name}
                   expert={expert.currentPosition}
-                  score={expert.averageProfileScore * 10}
+                  score={expert.averageProfileScore}
                 />
               ))}
               {experts.length > 3 && (
