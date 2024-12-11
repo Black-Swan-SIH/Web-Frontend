@@ -122,7 +122,6 @@ const Candidatelist = ({ head, page }) => {
   const renderContent = () => {
     if (page === "Candidatelist" || page === "Expertlist") {
       return sortFilteredData.map((person) => (
-        console.log(person.averageProfileScore),
         <Userlist
           key={person?.id}
           imageSrc={node}
