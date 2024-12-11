@@ -1,5 +1,5 @@
 import React from "react";
-import "./Boxes.css";
+import "../styles/Boxes.css";
 import Button from "./Button.jsx";
 
 const Boxes = ({ children, searchValue, onSearchChange, sortOption, onSortChange, ageRange, onAgeChange, searchInputRef, handleFocus }) => {

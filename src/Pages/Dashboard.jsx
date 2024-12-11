@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Heading from "../components/Heading";
-import "./Dashboard.css";
+import "../styles/Dashboard.css";
 import CandidateCount from "../components/CandidateCount";
 import formatNumber from "../components/FormatNumber";
 import TopExperts from "../components/TopExperts";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./nav.css";
+import "../styles/nav.css";
 import Button from "./Button";
 
 function NavBar() {

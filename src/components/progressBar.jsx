@@ -2,7 +2,7 @@ import React from "react";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "../App.css";
-import "./custom.css";
+import "../styles/custom.css";
 
 function ProgressBar({ value, color }) {
   return (

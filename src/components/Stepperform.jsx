@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Input from "./Input";
-import "./Stepperform.css"; // Import the external CSS file
+import "../styles/Stepperform.css";
 import Heading from "./Heading";
 
 const StepperForm = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Joblist.css";
+import "../styles/Joblist.css";
 import Heading from "./Heading";
 
 const Joblist = ({ imageSrc, jobs, applications, open,backgColor }) => {

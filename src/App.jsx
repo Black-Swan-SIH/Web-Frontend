@@ -6,21 +6,17 @@ import NavBar2 from "./components/Nav2";
 import Sign from "./components/SignIn";
 import Profile from "./components/profile";
 import { green } from "@mui/material/colors";
-import Experts from "./Pages/Experts";
+import Experts from "./pages/Experts";
 import Job from "./components/Job";
-import Candidatelist from "./Pages/Candidatelist";
+import Candidatelist from "./pages/Candidatelist";
 import ProgressBar from "./components/progressBar";
-import Dashboard from "./Pages/Dashboard";
-import Main from "./Pages/Main";
-import CandidateHome from "./Pages/CandidateHome";
+import Dashboard from "./pages/Dashboard";
+import Main from "./pages/Main";
+import CandidateHome from "./pages/CandidateHome";
 import Joblist from "./components/Joblist";
 
-import JobCandidate from "./Pages/JobCandidate";
-
-
-
-// import Joblist from "./components/Joblist";
-import JobList from "./Pages/JobList";
+import JobCandidate from "./pages/JobCandidate";
+import JobsList from "./pages/JobsList";
 import StepperForm from "./components/Stepperform";
 
 // import node from "./assets/node.jpg";
@@ -48,17 +44,15 @@ function App() {
         <Route path="/panel" element={<Candidatelist head="Select your panel" page="Panel"/>}/>
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/main" element={<Main/>}/>
+        <Route path="/" element={<Main/>}/>
         
         
-        <Route path="/joblist" element={<JobList head="Jobs" page="Userlist"/>}/>
+        <Route path="/joblist" element={<JobsList head="Jobs" page="Userlist"/>}/>
         <Route path="/stepperform" element={<StepperForm/>}/>
         {}
         <Route path="/candidateHome" element={<CandidateHome setShowNavbar={setShowNavbar}/>}/>
         <Route path="/jobcandidate" element={<JobCandidate setShowNavbar={setShowNavbar}/>}/>
-        
-        {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
-      </Routes>
+        </Routes>
 
         
         

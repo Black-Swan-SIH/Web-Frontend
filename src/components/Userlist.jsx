@@ -1,5 +1,5 @@
 import React from "react";
-import "./Userlist.css";
+import "../styles/Userlist.css";
 import Heading from "./Heading";
 import ProgressBar from "./progressBar";
 
