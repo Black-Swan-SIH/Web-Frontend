@@ -225,7 +225,7 @@ function ProfilePage({ value, color }) {
                   }}
                 >
                   <CircularProgressbarWithChildren
-                    value={userData.averageRelevancyScore}
+                    value={Math.round(userData.averageRelevancyScore)}
                     styles={{
                       path: {
                         stroke: "#DE8F6E",
@@ -246,7 +246,7 @@ function ProfilePage({ value, color }) {
                         fontWeight: "500",
                       }}
                     >
-                      <p>{userData.averageRelevancyScore
+                      <p>{Math.round(userData.averageRelevancyScore)
                       } / 100</p>
                     </div>
                   </CircularProgressbarWithChildren>

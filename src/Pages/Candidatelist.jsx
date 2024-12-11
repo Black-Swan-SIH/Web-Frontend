@@ -130,7 +130,8 @@ const Candidatelist = ({ head, page }) => {
           name={person?.name}
           age={calculateAge(person.dateOfBirth)}
           work={person?.currentPosition}
-          value={person?.averageProfileScore}
+          value={Math.round(person?.averageRelevancyScore
+          )}
         />
       ));
     } 
@@ -144,7 +145,7 @@ const Candidatelist = ({ head, page }) => {
           name={person?.name}
           age={calculateAge(person.dateOfBirth)}
           work={person?.currentPosition}
-          value={Math.round(person?.averageProfileScore)}
+          value={Math.round(person?.averageRelevancyScore)}
         />
       ));
     }
@@ -160,7 +161,7 @@ const Candidatelist = ({ head, page }) => {
           age={calculateAge(person.dateOfBirth)}
           pronoun={person?.pronoun}
           experience={person?.experience}
-          profileScore={person?.profileScore}
+          profileScore={Math.round(person?.averageRelevancyScore)}
           reviews={person?.reviews}
           interview={person?.interview}
         />
