@@ -2,21 +2,11 @@ import React from "react";
 import Button from "./Button";
 import ExpandableDiv from "./keySkills";
 import { useState } from "react";
-function CandidateCards({ height,height2,height3 }) {
+function CandidateCards({ height,height2 }) {
   const [divExpanded, setDivExpanded] = useState(false);
   const divExpand = () => {
     setDivExpanded(!divExpanded);
   };
-
-  const [divExpanded1, setDivExpanded1] = useState(false);
-  const divExpand1 = () => {
-    setDivExpanded1(!divExpanded1);
-  };
-  const computedHeight = divExpanded1 
-      ? (divExpanded ? height3 : height2) 
-      : (divExpanded ? height2 : height);
-
-
   return (
     <>
       <div
@@ -26,8 +16,7 @@ function CandidateCards({ height,height2,height3 }) {
           borderRadius: "10px",
           marginTop: "10px",
           backgroundColor: "white",
-          height:computedHeight
-
+          height:divExpanded ? height2 : height
         }}
       >
         <div className="ml-5 pl-5">
@@ -51,7 +40,7 @@ function CandidateCards({ height,height2,height3 }) {
             <strong>Status</strong>: Result Declared
           </h1>
           <hr className="my-5"></hr>
-          <ul >
+          <ul>
             <li>
               {" "}
               <div onClick={divExpand}>
@@ -71,7 +60,7 @@ function CandidateCards({ height,height2,height3 }) {
                
               />
               </div>
-             <div className="mt-5" onClick={divExpand1}>
+             <div onClick={divExpand}>
              <ExpandableDiv
                 name="Recommendation Status"
                 content="Recommendations for Selection for Vacancies in various disciplines including: Mechanical Engg (Item no. 2), Material Science & Engg (Item no. 5), Production & Industrial Engg (Item no. 15), etc."
