@@ -15,8 +15,12 @@ import Main from "./pages/Main";
 import CandidateHome from "./pages/CandidateHome";
 import Joblist from "./components/Joblist";
 
-import JobCandidate from "./pages/JobCandidate";
-import JobsList from "./pages/JobsList";
+import JobCandidate from "./Pages/JobCandidate";
+
+
+
+// import Joblist from "./components/Joblist";
+import JobList from "./Pages/JobList";
 import StepperForm from "./components/Stepperform";
 
 // import node from "./assets/node.jpg";
@@ -53,7 +57,7 @@ const handleLogout = () => {
         <Route path="/panel" element={<Candidatelist head="Select your panel" page="Panel"/>}/>
         <Route path="/bar" element={<ProgressBar value="80" color="green"/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/" element={<Main setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route path="/main" element={<Main/>}/>
         
         
         <Route path="/joblist" element={<JobsList head="Jobs" page="Userlist"/>}/>
@@ -61,7 +65,9 @@ const handleLogout = () => {
         {}
         <Route path="/candidateHome" element={<CandidateHome setShowNavbar={setShowNavbar}/>}/>
         <Route path="/jobcandidate" element={<JobCandidate setShowNavbar={setShowNavbar}/>}/>
-        </Routes>
+        
+        {/* <Route path="/joblist" element={<Joblist imageSrc={node} jobs={"Node.js Developer"} application={"Applications: 101"} open={"Opened 2 Days Ago"}/>}/> */}
+      </Routes>
 
         
         

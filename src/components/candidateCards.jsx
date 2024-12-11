@@ -83,6 +83,8 @@ function CandidateCards({ height,height2 }) {
           </ul>
         </div>
       </div>
+
+
     </>
   );
 }

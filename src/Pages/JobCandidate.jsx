@@ -36,10 +36,6 @@ function Job({setShowNavbar}) {
     navigate("/candidatelist"); // Replace '/another-page' with your route
   };
 
-  
- 
-
- 
 
   return (
     <>
